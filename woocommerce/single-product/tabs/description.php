@@ -23,4 +23,22 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 
 ?>
 
-<?php the_content(); ?>
+<?php the_content(); 
+
+if($attribute_finish)
+{
+    foreach($attribute_finish as $finish)
+    {
+        $finish_id = $finish->term_id;
+        $suitablity_id= get_field('suitablity_for_finish', 'pa_finish_' . $finish_id);
+
+        if ($suitablity_id) 
+        {
+            $suitability_post = get_post($suitablity_id);
+            echo apply_filters('the_content', $suitability_post->post_content);
+        }
+        
+    }
+} 
+
+?>
