@@ -205,9 +205,9 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 
 						        			echo '<a class="child-categories-item" href="' . $child_category_url . '">';
 											if($if_has_size_meta){
-												echo esc_html($child_category->name);
-											}else{
 												echo $if_has_size_meta;
+											}else{
+												echo esc_html($child_category->name);
 											}	
 						        			echo '</a>';
 
