@@ -153,7 +153,7 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 
 					if(get_field('size_mm', $product_id))
 					{
-						$if_has_size_meta = the_field('size_mm', $product_id);
+						$if_has_size_meta = get_field('size_mm', $product_id);
 					}
 
 					if ( has_term( 'Swimming Pool Tiles', 'product_cat', $product->get_id() ) )
@@ -205,9 +205,9 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 
 						        			echo '<a class="child-categories-item" href="' . $child_category_url . '">';
 											if($if_has_size_meta){
-												echo $if_has_size_meta;
-											}else{
 												echo esc_html($child_category->name);
+											}else{
+												echo $if_has_size_meta;
 											}	
 						        			echo '</a>';
 
