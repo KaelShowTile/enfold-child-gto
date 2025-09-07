@@ -149,16 +149,32 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 
 					$if_is_swimming_pool_wall_cladding = 0;
 
+					$if_has_size_meta;
+
+					if(get_field('size_mm', $product_id))
+					{
+						$if_has_size_meta = the_field('size_mm', $product_id);
+					}
+
 					if ( has_term( 'Swimming Pool Tiles', 'product_cat', $product->get_id() ) )
 					{
 						$if_is_swimming_pool_wall_cladding = 1;
-						echo '<a class="child-categories-item" href="/area/swimming-pool-tiles/">Swimming Pool Tiles</a>';
+						if($if_has_size_meta){
+							echo '<a class="child-categories-item" href="/area/swimming-pool-tiles/">' . $if_has_size_meta . '</a>';
+						}else{
+							echo '<a class="child-categories-item" href="/area/swimming-pool-tiles/">Swimming Pool Tiles</a>';
+						}
 					}
 
 					if ( has_term( 'Wall Cladding Tiles', 'product_cat', $product->get_id() ) )
 					{
 						$if_is_swimming_pool_wall_cladding = 1;
-						echo '<a class="child-categories-item" href="/area/wall-cladding/">Wall Cladding Tiles</a>';
+
+						if($if_has_size_meta){
+							echo '<a class="child-categories-item" href="/area/wall-cladding/">' . $if_has_size_meta . '</a>';
+						}else{
+							echo '<a class="child-categories-item" href="/area/wall-cladding/">Wall Cladding Tiles</a>';
+						}
 					}
 
 					if($if_is_swimming_pool_wall_cladding == 0)
@@ -188,7 +204,11 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 						        			}  
 
 						        			echo '<a class="child-categories-item" href="' . $child_category_url . '">';
-						        			echo esc_html($child_category->name);
+											if($if_has_size_meta){
+												echo esc_html($child_category->name);
+											}else{
+												echo $if_has_size_meta;
+											}	
 						        			echo '</a>';
 
 						        			$cat_count = $cat_count + 1;
