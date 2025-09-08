@@ -133,7 +133,25 @@ if ( ! empty( $product_tabs ) ) : ?>
 
 			<div class="woocommerce-Tabs-panel tile-desciprion-tab-content entry-content wc-tab" id="tile-desciprion-tab-control" role="tabpanel">
 				<h2 class="description-tab-product-name"><?php echo $product_name; ?></h2>
-				<?php the_content(); ?>
+				<?php the_content(); 
+
+				$attribute_finish = get_the_terms($product_id, 'pa_finish');
+				if($attribute_finish)
+				{
+					foreach($attribute_finish as $finish)
+					{
+						$finish_id = $finish->term_id;
+						$suitablity_id= get_field('suitablity_for_finish', 'pa_finish_' . $finish_id);
+
+						if ($suitablity_id) 
+						{
+							$suitability_post = get_post($suitablity_id);
+							echo apply_filters('the_content', $suitability_post->post_content);
+						}
+						
+					}
+				} 
+				?>
 			</div>
 
 			
