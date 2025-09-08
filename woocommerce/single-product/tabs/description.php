@@ -25,6 +25,7 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 
 <?php the_content(); 
 
+$attribute_finish = get_the_terms($product_id, 'pa_finish');
 if($attribute_finish)
 {
     foreach($attribute_finish as $finish)

@@ -200,22 +200,43 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 
 						        			if ($cat_count !== 0)
 						        			{
-						        				echo ', ';
+						        				//display ',' if has more than one cate
+												if($if_has_size_meta){
+
+												}else{
+													echo ', ';
+												}
 						        			}  
 
-						        			echo '<a class="child-categories-item" href="' . $child_category_url . '">';
-											if($if_has_size_meta){
-												echo esc_html($child_category->name);
+											if($if_has_size_meta)
+											{
+												if($cat_count == 0){
+													echo '<a class="child-categories-item" href="' . $child_category_url . '">';
+													echo $if_has_size_meta;
+													echo '</a>';
+												}
 											}else{
-												echo $if_has_size_meta;
+												echo '<a class="child-categories-item" href="' . $child_category_url . '">';
+												echo esc_html($child_category->name);
+												echo '</a>';
 											}	
-						        			echo '</a>';
 
 						        			$cat_count = $cat_count + 1;
 						        		}
 
 						        	}  
 						        }
+							}
+
+						}else{
+
+							if($if_has_size_meta)
+							{
+								if($if_has_size_meta){
+									echo '<a class="child-categories-item">';
+									echo $if_has_size_meta;
+									echo '</a>';
+								}
 							}
 
 						}
