@@ -136,8 +136,7 @@ if ( ! $short_description &&  ! $terms) {
 				        			{ 
 				        				$child_category_url = get_term_link($child_category->term_id, 'product_cat');
 
-				        				if ($cat_count !== 0)
-				        				{
+				        				if ($cat_count !== 0){
 				        					echo ', ';
 				        				}  
 
@@ -147,11 +146,8 @@ if ( ! $short_description &&  ! $terms) {
 
 				        				$cat_count = $cat_count + 1;
 				        			}
-
 				        		} 
-
 				        		echo '</p>';
-
 				        	echo'</li>';
 
 			        	}
@@ -159,62 +155,98 @@ if ( ! $short_description &&  ! $terms) {
 
 					//ACF parameters
 
-				    if(get_field('origin'))
+					$has_origin_attr = $product->get_attribute('pa_origin');
+
+				    if(get_field('origin') || $has_origin_attr)
 				    {
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Origin:</p>';
 				        	echo '<p class="child-categories-item">';
-				        	echo esc_html(the_field('origin'));
+							if(get_field('origin')){
+								echo esc_html(the_field('origin'));
+							}else{
+								echo $has_origin_attr;
+							}
 				        	echo '</p>';
 				        echo'</li>';
 				    }
 
-				    if(get_field('finish'))
+					$has_finish_attr = $product->get_attribute('pa_finish');
+
+				    if(get_field('finish') || $has_finish_attr)
 				    {
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Finish:</p>';
 				        	echo '<p class="child-categories-item">'; 
-				        	echo esc_html(the_field('finish'));
+							if(get_field('finish')){
+								echo esc_html(the_field('finish'));
+							}else{
+								echo $has_finish_attr;
+							}
 				        	echo '</p>';
 				        echo'</li>';
 				    }
 
-				    if(get_field('edge'))
+					$has_edge_attr = $product->get_attribute('pa_edge');
+
+				    if(get_field('edge') || $has_edge_attr)
 				    {
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Edge:</p>';
 				        	echo '<p class="child-categories-item">'; 
-				        	echo esc_html(the_field('edge'));
+							if(get_field('edge')){
+								echo esc_html(the_field('edge'));
+							}else{
+								echo $has_edge_attr;
+							}
 				        	echo '</p>';
 				        echo'</li>';
 				    }
 
-				    if(get_field('thickness'))
+					$has_thickness_attr = $product->get_attribute('pa_thickness');
+
+				    if(get_field('thickness') || $has_thickness_attr)
 				    {
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Thickness:</p>';
 				        	echo '<p class="child-categories-item">'; 
-				        	echo esc_html(the_field('thickness'));
+							if(get_field('thickness')){
+								echo esc_html(the_field('thickness'));
+							}else{
+								echo $has_thickness_attr;
+							}
 				        	echo '</p>';
 				        echo'</li>';
 				    }
 
-				    if(get_field('package'))
+					$has_package_attr = $product->get_attribute('pa_package');
+
+				    if(get_field('package') || $has_package_attr)
 				    {
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Package:</p>';
 				        	echo '<p class="child-categories-item">'; 
-				        	echo esc_html(the_field('package'));
+							if(get_field('package')){
+								echo esc_html(the_field('package'));
+							}else{
+								echo $has_package_attr;
+							}
 				        	echo '</p>';
 				        echo'</li>';
 				    }
 
-				    if(get_field('slip_rate'))
+					$has_slip_rate_attr = $product->get_attribute('pa_slip_rate');
+
+				    if(get_field('slip_rate') || $has_slip_rate_attr)
 				    {
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Slip Rate:</p>';
 				        	echo '<p class="child-categories-item">'; 
-				        	echo esc_html(the_field('slip_rate'));
+							if(get_field('slip_rate')){
+								echo esc_html(the_field('slip_rate'));
+							}else{
+								echo $has_slip_rate_attr;
+							}
 				        	echo '</p>';
 				        echo'</li>';
 				    }
@@ -229,6 +261,8 @@ if ( ! $short_description &&  ! $terms) {
 
 	<?php echo $short_description; // WPCS: XSS ok. 
 		
+
+		//linked varaiation
 		$attribute_item_list = [];
 
 		$attribute_color = [];
