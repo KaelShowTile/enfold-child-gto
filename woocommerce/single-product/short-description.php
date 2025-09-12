@@ -155,22 +155,6 @@ if ( ! $short_description &&  ! $terms) {
 
 					//ACF parameters
 
-					$has_origin_attr = $product->get_attribute('pa_origin');
-
-				    if(get_field('origin') || $has_origin_attr)
-				    {
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Origin:</p>';
-				        	echo '<p class="child-categories-item">';
-							if(get_field('origin')){
-								echo esc_html(the_field('origin'));
-							}else{
-								echo $has_origin_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    }
-
 					$has_finish_attr = $product->get_attribute('pa_finish');
 
 				    if(get_field('finish') || $has_finish_attr)
@@ -246,6 +230,22 @@ if ( ! $short_description &&  ! $terms) {
 								echo esc_html(the_field('slip_rate'));
 							}else{
 								echo $has_slip_rate_attr;
+							}
+				        	echo '</p>';
+				        echo'</li>';
+				    }
+
+					$has_grout_attr = $product->get_attribute('pa_grout-colour');
+
+				    if(get_field('grout') || $has_grout_attr)
+				    {
+				        echo '<li>';
+				        	echo '<p class="parent-categories-item">Slip Rate:</p>';
+				        	echo '<p class="child-categories-item">'; 
+							if(get_field('grout')){
+								echo esc_html(the_field('grout'));
+							}else{
+								echo $has_grout_attr;
 							}
 				        	echo '</p>';
 				        echo'</li>';
