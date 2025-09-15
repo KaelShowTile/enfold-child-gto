@@ -149,15 +149,9 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 
 					$if_is_swimming_pool_wall_cladding = 0;
 
-					$if_has_size_meta;
+					$if_has_size_meta = $product->get_attribute('pa_size');
 
-					if(get_field('size_mm', $product_id))
-					{
-						$if_has_size_meta = get_field('size_mm', $product_id);
-					}
-
-					if ( has_term( 'Swimming Pool Tiles', 'product_cat', $product->get_id() ) )
-					{
+					if ( has_term( 'Swimming Pool Tiles', 'product_cat', $product->get_id() ) ){
 						$if_is_swimming_pool_wall_cladding = 1;
 						if($if_has_size_meta){
 							echo '<a class="child-categories-item" href="/area/swimming-pool-tiles/">' . $if_has_size_meta . '</a>';

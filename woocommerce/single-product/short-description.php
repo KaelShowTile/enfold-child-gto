@@ -54,14 +54,12 @@ if ( ! $short_description &&  ! $terms) {
 
 				if (isset($categories[0])){
 
-					foreach ($categories[0] as $parent_category) 
-					{						
+					foreach ($categories[0] as $parent_category){						
 						$parent_category_name = $parent_category->name;
 						$parent_category_id = $parent_category->term_id;
 						$parent_category_url = get_term_link($parent_category->term_id, 'product_cat');
 
-						if ($parent_category_name == "Size") 
-						{
+						if ($parent_category_name == "Size"){
 							echo '<li>';
 				        		echo '<a class="parent-categories-item" href="' . $parent_category_url . '">';
 				        		echo esc_html($parent_category_name) . ':'; 
@@ -69,33 +67,26 @@ if ( ! $short_description &&  ! $terms) {
 
 				        		echo '<p>';
 
-				        		if (isset($categories[$parent_category_id])) 
-				        		{
-				        			
+				        		if (isset($categories[$parent_category_id])){
 				        			$cat_count = 0;
 
-				        			foreach ($categories[$parent_category_id] as $child_category)
-				        			{ 
+				        			foreach ($categories[$parent_category_id] as $child_category){ 
 				        				$child_category_url = get_term_link($child_category->term_id, 'product_cat');
 
-				        				if ($cat_count !== 0)
-				        				{
+				        				if ($cat_count !== 0){
 				        					echo ', ';
 				        				}  
 
 				        				echo '<a class="child-categories-item" href="' . $child_category_url . '">';
 
-				        				$custom_size = get_field('size_mm', $product->get_id());
-				        				if(empty($custom_size))
-				        				{
+				        				$custom_size = $product->get_attribute('pa_size');
+				        				if(empty($custom_size)){
 				        					echo esc_html($child_category->name);
 				        				}
-				        				else
-				        				{
+				        				else{
 				        					echo $custom_size;
 				        				}
 
-				        				  
 				        				echo '</a>';
 
 				        				$cat_count = $cat_count + 1;
@@ -111,15 +102,12 @@ if ( ! $short_description &&  ! $terms) {
 					}
 
 
-					foreach ($categories[0] as $parent_category) 
-					{						
+					foreach ($categories[0] as $parent_category){						
 						$parent_category_name = $parent_category->name;
 						$parent_category_id = $parent_category->term_id;
 						$parent_category_url = get_term_link($parent_category->term_id, 'product_cat');
 
-						if($parent_category_name !== "Tiles on sale" && $parent_category_name !== "Size")
-			        	{ 
-			        		
+						if($parent_category_name !== "Tiles on sale" && $parent_category_name !== "Size"){ 	
 			        		echo '<li>';
 				        		echo '<a class="parent-categories-item" href="' . $parent_category_url . '">';
 				        		echo esc_html($parent_category_name). ':'; 
@@ -127,13 +115,10 @@ if ( ! $short_description &&  ! $terms) {
 
 				        		echo '<p>';
 
-				        		if (isset($categories[$parent_category_id])) 
-				        		{
-				        			
+				        		if (isset($categories[$parent_category_id])){
 				        			$cat_count = 0;
 
-				        			foreach ($categories[$parent_category_id] as $child_category)
-				        			{ 
+				        			foreach ($categories[$parent_category_id] as $child_category){ 
 				        				$child_category_url = get_term_link($child_category->term_id, 'product_cat');
 
 				        				if ($cat_count !== 0){
@@ -149,7 +134,6 @@ if ( ! $short_description &&  ! $terms) {
 				        		} 
 				        		echo '</p>';
 				        	echo'</li>';
-
 			        	}
 					}
 
@@ -157,8 +141,7 @@ if ( ! $short_description &&  ! $terms) {
 
 					$has_finish_attr = $product->get_attribute('pa_finish');
 
-				    if(get_field('finish') || $has_finish_attr)
-				    {
+				    if(get_field('finish') || $has_finish_attr){
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Finish:</p>';
 				        	echo '<p class="child-categories-item">'; 
@@ -173,8 +156,7 @@ if ( ! $short_description &&  ! $terms) {
 
 					$has_edge_attr = $product->get_attribute('pa_edge');
 
-				    if(get_field('edge') || $has_edge_attr)
-				    {
+				    if(get_field('edge') || $has_edge_attr){
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Edge:</p>';
 				        	echo '<p class="child-categories-item">'; 
@@ -189,8 +171,7 @@ if ( ! $short_description &&  ! $terms) {
 
 					$has_thickness_attr = $product->get_attribute('pa_thickness');
 
-				    if(get_field('thickness') || $has_thickness_attr)
-				    {
+				    if(get_field('thickness') || $has_thickness_attr){
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Thickness:</p>';
 				        	echo '<p class="child-categories-item">'; 
@@ -205,8 +186,7 @@ if ( ! $short_description &&  ! $terms) {
 
 					$has_package_attr = $product->get_attribute('pa_package');
 
-				    if(get_field('package') || $has_package_attr)
-				    {
+				    if(get_field('package') || $has_package_attr){
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Package:</p>';
 				        	echo '<p class="child-categories-item">'; 
@@ -221,8 +201,7 @@ if ( ! $short_description &&  ! $terms) {
 
 					$has_slip_rate_attr = $product->get_attribute('pa_slip_rate');
 
-				    if(get_field('slip_rate') || $has_slip_rate_attr)
-				    {
+				    if(get_field('slip_rate') || $has_slip_rate_attr){
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Slip Rate:</p>';
 				        	echo '<p class="child-categories-item">'; 
@@ -237,8 +216,7 @@ if ( ! $short_description &&  ! $terms) {
 
 					$has_grout_attr = $product->get_attribute('pa_grout-colour');
 
-				    if(get_field('grout') || $has_grout_attr)
-				    {
+				    if(get_field('grout') || $has_grout_attr){
 				        echo '<li>';
 				        	echo '<p class="parent-categories-item">Slip Rate:</p>';
 				        	echo '<p class="child-categories-item">'; 
@@ -249,10 +227,8 @@ if ( ! $short_description &&  ! $terms) {
 							}
 				        	echo '</p>';
 				        echo'</li>';
-				    }
-				        			
+				    }     			
 				}
-
 			?>
 
 		</div>
@@ -264,7 +240,6 @@ if ( ! $short_description &&  ! $terms) {
 
 		//linked varaiation
 		$attribute_item_list = [];
-
 		$attribute_color = [];
 		$attribute_size = [];
 		$attribute_finish = [];
@@ -369,116 +344,85 @@ if ( ! $short_description &&  ! $terms) {
 					$related_product_ID = $related_product->ID;
 					$related_product = wc_get_product($related_product_ID);
 					
-					if($related_product)
-					{
+					if($related_product){
 						$related_colours = "";
 						$related_size = "";
 						$related_finish = "";
 						$related_thickness = "";
 						$related_depth_size = "";
 
-						if($ifHasColours == 1)
-						{
+						if($ifHasColours == 1){
 							$related_colours = $related_product->get_attribute('pa_colours');
-
-							foreach($attribute_color as $color)
-							{
-								if($related_colours == $color)
-								{
+							foreach($attribute_color as $color){
+								if($related_colours == $color){
 									$checkValue = 1;	
 								}
 							}
 
-							if($checkValue == 0)
-							{
+							if($checkValue == 0){
 								$attribute_color[] = $related_colours;
 							}
-							
 						}
 
-						if($ifHasSize == 1)
-						{
+						if($ifHasSize == 1){
 							$related_size = $related_product->get_attribute('pa_size');
-
 							$checkValue = 0;
 
-							foreach($attribute_size as $size)
-							{
-								if($related_size == $size)
-								{
+							foreach($attribute_size as $size){
+								if($related_size == $size){
 									$checkValue = 1;
 								}
-
 							}
 
-							if($checkValue == 0)
-							{
+							if($checkValue == 0){
 								$attribute_size[] = $related_size;
 							}
-
 						}
 
-						if($ifHasFinish == 1)
-						{
+						if($ifHasFinish == 1){
 							$related_finish = $related_product->get_attribute('pa_finish');
-
 							$checkValue = 0;
 
-							foreach($attribute_finish as $finish)
-							{
-								if($related_finish == $finish)
-								{
+							foreach($attribute_finish as $finish){
+								if($related_finish == $finish){
 									$checkValue = 1;
 								}
 							}
 
-							if($checkValue == 0)
-							{
+							if($checkValue == 0){
 								$attribute_finish[] = $related_finish;
 							}
-
 						}
 
-						if($ifHasThickness == 1)
-						{
+						if($ifHasThickness == 1){
 							$related_thickness = $related_product->get_attribute('pa_thickness');
-
 							$checkValue = 0;
 						
-							foreach($attribute_thickness as $thickness)
-							{
-								if($related_thickness == $thickness)
-								{
+							foreach($attribute_thickness as $thickness){
+								if($related_thickness == $thickness){
 									$checkValue = 1;
 								}
 							}
 
-							if($checkValue == 0)
-							{
+							if($checkValue == 0){
 								$attribute_thickness[] = $related_thickness;
 							}
 						}
 
-						if($ifHasDepthSize == 1)
-						{
+						if($ifHasDepthSize == 1){
 							$related_depth_size = $related_product->get_attribute('pa_depth-size');
-
 							$checkValue = 0;
 
-							foreach($attribute_depth as $depth)
-							{
-								if($related_depth_size != $depth)
-								{
+							foreach($attribute_depth as $depth){
+								if($related_depth_size != $depth){
 									$checkValue = 1;
 								}
 							}
 
-							if($checkValue == 0)
-							{
+							if($checkValue == 0){
 								$attribute_depth[] = $related_depth_size;
 							}
-						}
-				       
+						}  
 					}
 
 					$attribute_item_list[] = new attribute_item_obj(
@@ -506,34 +450,27 @@ if ( ! $short_description &&  ! $terms) {
 
 				echo'<div class="gto-link-products-attribute attribute-color">';
 
-					if($ifHasColours == 1)
-					{
+					if($ifHasColours == 1){
 						echo'<p class="attribute-name">Colour: </p>';
 
-						foreach($attribute_color as $color)
-						{
-							if($color == $active_colours)
-							{
+						foreach($attribute_color as $color){
+							if($color == $active_colours){
 								echo'<span class="active">';
 							}
-							else
-							{
+							else{
 								echo'<span>';
 							}
 
 							$ifCheckValue = 0;
 
-							foreach($attribute_item_list as $attribute_item)
-							{
-								if($attribute_item->colour == $color && $attribute_item->size == $active_size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $active_depth_size)
-								{
+							foreach($attribute_item_list as $attribute_item){
+								if($attribute_item->colour == $color && $attribute_item->size == $active_size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $active_depth_size){
 									echo'<a href="'. $attribute_item->link .'"><p><img src="' . $attribute_item->thumbnail . ' "></img>' . $color .'</p></a>';
 									$ifCheckValue = 1;
 								}
 							}
 
-							if($ifCheckValue == 0)
-							{
+							if($ifCheckValue == 0){
 								echo'<p class="not-available">' . $color .'</p>';
 							}
 
@@ -546,34 +483,27 @@ if ( ! $short_description &&  ! $terms) {
 
 				echo'<div class="gto-link-products-attribute">';
 
-					if($ifHasSize == 1)
-					{
+					if($ifHasSize == 1){
 						echo'<p class="attribute-name">Size: </p>';
 
-						foreach($attribute_size as $size)
-						{
-							if($size == $active_size)
-							{
+						foreach($attribute_size as $size){
+							if($size == $active_size){
 								echo'<span class="active">';
 							}
-							else
-							{
+							else{
 								echo'<span>';
 							}
 
 							$ifCheckValue = 0;
 
-							foreach($attribute_item_list as $attribute_item)
-							{
-								if($attribute_item->colour == $active_colours && $attribute_item->size == $size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $active_depth_size)
-								{
+							foreach($attribute_item_list as $attribute_item){
+								if($attribute_item->colour == $active_colours && $attribute_item->size == $size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $active_depth_size){
 									echo'<a href="'. $attribute_item->link .'"><p>' . $size .'</p></a>';
 									$ifCheckValue = 1;
 								}
 							}
 
-							if($ifCheckValue == 0)
-							{
+							if($ifCheckValue == 0){
 								echo'<p class="not-available">' . $size .'</p>';
 							}
 
@@ -585,34 +515,27 @@ if ( ! $short_description &&  ! $terms) {
 
 				echo'<div class="gto-link-products-attribute">';
 
-					if($ifHasFinish == 1)
-					{
+					if($ifHasFinish == 1){
 						echo'<p class="attribute-name">Finish: </p>';
 
-						foreach($attribute_finish as $finish)
-						{
-							if($finish == $active_finish)
-							{
+						foreach($attribute_finish as $finish){
+							if($finish == $active_finish){
 								echo'<span class="active">';
 							}
-							else
-							{
+							else{
 								echo'<span>';
 							}
 
 							$ifCheckValue = 0;
 
-							foreach($attribute_item_list as $attribute_item)
-							{
-								if($attribute_item->colour == $active_colours && $attribute_item->size == $active_size && $attribute_item->finish == $finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $active_depth_size)
-								{
+							foreach($attribute_item_list as $attribute_item){
+								if($attribute_item->colour == $active_colours && $attribute_item->size == $active_size && $attribute_item->finish == $finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $active_depth_size){
 									echo'<a href="'. $attribute_item->link .'"><p>' . $finish .'</p></a>';
 									$ifCheckValue = 1;
 								}
 							}
 
-							if($ifCheckValue == 0)
-							{
+							if($ifCheckValue == 0){
 								echo'<p class="not-available">' . $finish .'</p>';
 							}
 
@@ -624,34 +547,27 @@ if ( ! $short_description &&  ! $terms) {
 
 				echo'<div class="gto-link-products-attribute">';
 
-					if($ifHasThickness == 1)
-					{
+					if($ifHasThickness == 1){
 						echo'<p class="attribute-name">Thickness: </p>';
 
-						foreach($attribute_thickness as $thickness)
-						{
-							if($thickness == $active_thickness)
-							{
+						foreach($attribute_thickness as $thickness){
+							if($thickness == $active_thickness){
 								echo'<span class="active">'. $thickness .'</span>';
 							}
-							else
-							{
+							else{
 								echo'<span>'. $thickness .'</span>';
 							}
 
 							$ifCheckValue = 0;
 
-							foreach($attribute_item_list as $attribute_item)
-							{
-								if($attribute_item->colour == $active_colours && $attribute_item->size == $active_size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $thickness && $attribute_item->depth == $active_depth_size)
-								{
+							foreach($attribute_item_list as $attribute_item){
+								if($attribute_item->colour == $active_colours && $attribute_item->size == $active_size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $thickness && $attribute_item->depth == $active_depth_size){
 									echo'<a href="'. $attribute_item->link .'"><p>' . $thickness .'</p></a>';
 									$ifCheckValue = 1;
 								}
 							}
 
-							if($ifCheckValue == 0)
-							{
+							if($ifCheckValue == 0){
 								echo'<p class="not-available">' . $thickness .'</p>';
 							}
 
@@ -663,34 +579,27 @@ if ( ! $short_description &&  ! $terms) {
 
 				echo'<div class="gto-link-products-attribute">';
 
-					if($ifHasDepthSize == 1)
-					{
+					if($ifHasDepthSize == 1){
 						echo'<p class="attribute-name">Depth Size: </p>';
 
-						foreach($attribute_depth as $depth)
-						{
-							if($depth == $active_depth_size)
-							{
+						foreach($attribute_depth as $depth){
+							if($depth == $active_depth_size){
 								echo'<span class="active">'. $depth .'</span>';
 							}
-							else
-							{
+							else{
 								echo'<span>'. $depth .'</span>';
 							}
 
 							$ifCheckValue = 0;
 
-							foreach($attribute_item_list as $attribute_item)
-							{
-								if($attribute_item->colour == $active_colours && $attribute_item->size == $active_size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $depth)
-								{
+							foreach($attribute_item_list as $attribute_item){
+								if($attribute_item->colour == $active_colours && $attribute_item->size == $active_size && $attribute_item->finish == $active_finish && $attribute_item->thickness == $active_thickness && $attribute_item->depth == $depth){
 									echo'<a href="'. $attribute_item->link .'"><p>' . $depth .'</p></a>';
 									$ifCheckValue = 1;
 								}
 							}
 
-							if($ifCheckValue == 0)
-							{
+							if($ifCheckValue == 0){
 								echo'<p class="not-available">' . $depth .'</p>';
 							}
 
