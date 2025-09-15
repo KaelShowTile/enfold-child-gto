@@ -827,3 +827,22 @@ function force_sample_shipping_method($rates, $package) {
 
     return $rates;
 }
+
+//Update product image alt text to product title
+add_filter('wp_get_attachment_image_attributes', 'change_attachment_image_attributes', 20, 2);
+function change_attachment_image_attributes($attr, $attachment) {
+    // Get the post parent of the attachment
+    $parent = get_post_field('post_parent', $attachment);
+    // Get the post type of the parent
+    $type = get_post_field('post_type', $parent);
+    
+    // Check if the attachment belongs to a product
+    if ($type == 'product') {
+        // Get the product title
+        $title = get_post_field('post_title', $parent);
+        // Set alt and title attributes to the product title
+        $attr['alt'] = $title;
+        $attr['title'] = $title;
+    }
+    return $attr;
+}

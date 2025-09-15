@@ -26,14 +26,15 @@ $gallery_count = 0;
 $gallery_pre_count = 0;
 $gallery_btn_code = "";
 $gallery_slider_code = "";
+$product_title = $product->get_title();
 
 if(! empty($thumbnail_id))
 {	
 	$gallery_count = $gallery_count + 1;
 	$gallery_pre_count = $gallery_count - 1;
 
-	$gallery_btn_code = "<button type='button' data-bs-target='#carouselIndicators' data-bs-slide-to='" . $gallery_pre_count. "' class='active' aria-current='true' aria-label='Slide ". $gallery_count ."'><img src=" . wp_get_attachment_image_url($thumbnail_id, 'thumbnail') ."></button>";
-	$gallery_slider_code = "<div class='carousel-item active'><a href=" . wp_get_attachment_image_url($thumbnail_id, 'full') . " rel='lightbox'><img src=" . wp_get_attachment_image_url($thumbnail_id, 'full') . " class='d-block w-100'></a></div>";
+	$gallery_btn_code = "<button type='button' data-bs-target='#carouselIndicators' data-bs-slide-to='" . $gallery_pre_count. "' class='active' aria-current='true' aria-label='Slide ". $gallery_count ."'><img src='" . wp_get_attachment_image_url($thumbnail_id, 'thumbnail') ."' alt='" . $product_title . "'></button>";
+	$gallery_slider_code = "<div class='carousel-item active'><a href=" . wp_get_attachment_image_url($thumbnail_id, 'full') . " rel='lightbox'><img src='" . wp_get_attachment_image_url($thumbnail_id, 'full') . "' alt='" . $product_title . "' class='d-block w-100'></a></div>";
 
 	if(! empty( $gallery_image_ids ))
 	{
@@ -46,8 +47,8 @@ if(! empty($thumbnail_id))
 
 			$gallery_shortcode = $gallery_shortcode . "[av_slide id='" . $image_id . "' element_template='' title='' video='' slide_type='' mobile_image='' fallback_link='https://' video_ratio='16:9' video_autoplay='' video_controls='' video_mute='' video_loop='' custom_title_size='' av-desktop-font-size-title='' av-medium-font-size-title='' av-small-font-size-title='' av-mini-font-size-title='' custom_size='' av-desktop-font-size='' av-medium-font-size='' av-small-font-size='' av-mini-font-size='' font_color='' custom_title='' custom_content='' heading_tag='' heading_class='' link_apply='' link='' link_dynamic='' link_target='' one_element_template=''  av_uid='' sc_version='1.0'][/av_slide]";
 
-			$gallery_btn_code = $gallery_btn_code . "<button type='button' data-bs-target='#carouselIndicators' data-bs-slide-to='" . $gallery_pre_count. "' aria-label='Slide ". $gallery_count ."'><img src=" . wp_get_attachment_image_url($image_id, 'thumbnail') ."></button>";
-			$gallery_slider_code = $gallery_slider_code . "<div class='carousel-item'><a href=" . wp_get_attachment_image_url($image_id, 'full') . " rel='lightbox'><img src=" . wp_get_attachment_image_url($image_id, 'full') . " class='d-block w-100'></a></div>";
+			$gallery_btn_code = $gallery_btn_code . "<button type='button' data-bs-target='#carouselIndicators' data-bs-slide-to='" . $gallery_pre_count. "' aria-label='Slide ". $gallery_count ."'><img src='" . wp_get_attachment_image_url($image_id, 'thumbnail') ."' alt='" . $product_title . "'></button>";
+			$gallery_slider_code = $gallery_slider_code . "<div class='carousel-item'><a href='" . wp_get_attachment_image_url($image_id, 'full') . "' rel='lightbox'><img src='" . wp_get_attachment_image_url($image_id, 'full') . "' alt='" . $product_title . "' class='d-block w-100'></a></div>";
 	    }
 
 	    $gallery_shortcode = $gallery_shortcode . "[/av_slideshow]";
@@ -61,8 +62,8 @@ else
 {
 	$gallery_shortcode = "[av_slideshow img_copyright='' size='no scaling' control_layout='av-control-default' slider_navigation='av-navigate-arrows av-navigate-dots' nav_visibility_desktop='' nav_arrow_color='' nav_arrow_bg_color='' nav_dots_color='' nav_dot_active_color='' img_copyright_font='' av-desktop-font-img_copyright_font='' av-medium-font-img_copyright_font='' av-small-font-img_copyright_font='' av-mini-font-img_copyright_font='' img_copyright_color='' img_copyright_bg='' animation='slide' transition_speed='' autoplay='false' interval='5' img_scale='' img_scale_end='10' img_scale_direction='' img_scale_duration='3' img_scale_opacity='1' conditional_play='' img_scrset='' lazy_loading='disabled' alb_description='' id='' custom_class='' template_class='' element_template='' one_element_template='' av_uid='av-m6ydukis' sc_version='1.0'][av_slide id='29495' element_template='' title='' video='' slide_type='' mobile_image='' fallback_link='https://' video_ratio='16:9' video_autoplay='' video_controls='' video_mute='' video_loop='' custom_title_size='' av-desktop-font-size-title='' av-medium-font-size-title='' av-small-font-size-title='' av-mini-font-size-title='' custom_size='' av-desktop-font-size='' av-medium-font-size='' av-small-font-size='' av-mini-font-size='' font_color='' custom_title='' custom_content='' heading_tag='' heading_class='' link_apply='' link='' link_dynamic='' link_target='' one_element_template=''  av_uid='' sc_version='1.0'][/av_slide][/av_slideshow]";
 
-	$gallery_btn_code = "<button type='button' data-bs-target='#carouselIndicators' data-bs-slide-to='" . $gallery_pre_count. "' class='active' aria-current='true' aria-label='Slide ". $gallery_count ."'><img src='/wp-content/uploads/2025/02/no-photo.jpg'></button>"; 
-	$gallery_slider_code = "<div class='carousel-item active'><img src='/wp-content/uploads/2025/02/no-photo.jpg' class='d-block w-100'> </div>";
+	$gallery_btn_code = "<button type='button' data-bs-target='#carouselIndicators' data-bs-slide-to='" . $gallery_pre_count. "' class='active' aria-current='true' aria-label='Slide ". $gallery_count ."'><img src='/wp-content/uploads/2025/02/no-photo.jpg' alt='no photo'></button>"; 
+	$gallery_slider_code = "<div class='carousel-item active'><img src='/wp-content/uploads/2025/02/no-photo.jpg' alt='no photo' class='d-block w-100'> </div>";
 }
 
 
