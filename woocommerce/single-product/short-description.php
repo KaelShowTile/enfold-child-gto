@@ -218,7 +218,7 @@ if ( ! $short_description &&  ! $terms) {
 
 				    if(get_field('grout') || $has_grout_attr){
 				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Slip Rate:</p>';
+				        	echo '<p class="parent-categories-item">Grout Colour:</p>';
 				        	echo '<p class="child-categories-item">'; 
 							if(get_field('grout')){
 								echo esc_html(the_field('grout'));
