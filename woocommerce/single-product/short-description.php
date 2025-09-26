@@ -137,7 +137,7 @@ if ( ! $short_description &&  ! $terms) {
 			        	}
 					}
 
-					//ACF parameters
+					/*ACF parameters
 
 					$has_finish_attr = $product->get_attribute('pa_finish');
 
@@ -227,7 +227,9 @@ if ( ! $short_description &&  ! $terms) {
 							}
 				        	echo '</p>';
 				        echo'</li>';
-				    }     			
+				    } 
+						
+					*/
 				}
 			?>
 
