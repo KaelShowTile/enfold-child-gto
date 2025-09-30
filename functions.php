@@ -205,6 +205,33 @@ function woocommerce_ajax_add_to_cart() {
     wp_die();
 }
 
+// Add AJAX endpoint for nonce refresh
+add_action('wp_ajax_refresh_nonce', 'refresh_nonce_callback');
+add_action('wp_ajax_nopriv_refresh_nonce', 'refresh_nonce_callback');
+
+function refresh_nonce_callback() {
+    // You can specify the action for the nonce, or use a default
+    $action = isset($_POST['action_name']) ? sanitize_text_field($_POST['action_name']) : 'wp_rest';
+    
+    $response = array(
+        'nonce' => wp_create_nonce($action),
+        'success' => true
+    );
+    
+    wp_send_json($response);
+}
+
+// Enqueue our refresh script
+add_action('wp_enqueue_scripts', 'enqueue_nonce_refresh_script');
+function enqueue_nonce_refresh_script() {
+    wp_enqueue_script('nonce-refresh', get_stylesheet_directory_uri() . '/js/nonce-refresh.js', array('jquery'), '1.0', true);
+    
+    // Pass AJAX URL to script
+    wp_localize_script('nonce-refresh', 'ajax_object', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('refresh_nonce_action')
+    ));
+}
 
 //fliter main function
 function filter_products() {
