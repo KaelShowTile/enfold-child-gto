@@ -819,7 +819,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#home-categories-container.three-col-icon-list-container .three-col-on-mobile .avia_button_icon{display: inline-block; width: 100%;}
 	#home-categories-container.three-col-icon-list-container .three-col-on-mobile .avia_button_icon::before{font-size: 2rem;}
 
-	#top #wrap_all #footer-container .flex_column{width: 50%;}
+	.responsive #top #footer-container .flex_column{width: 50%;}
 
 	.gto-product-gallery-container{width: 100%}
 	#top.product-template-default.single-product #main .template-shop .product .summary.gto-product-des-container{width: 100%}
