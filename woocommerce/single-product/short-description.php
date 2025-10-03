@@ -237,10 +237,11 @@ if ( ! $short_description &&  ! $terms) {
 
 	</div>
 
-	<?php echo $short_description; // WPCS: XSS ok. 
-	display_linked_product($get_product_id);
-
-	?>
+	<?php echo $short_description; // WPCS: XSS ok.if (function_exists('display_linked_product'))
+	if (function_exists('display_linked_product'))
+	{
+		echo display_linked_product($get_product_id);
+	} ?>
 
 	</div>
 	
