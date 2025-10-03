@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 global $product;
 $get_product_id = $product->get_id();
 $gallery_image_ids = $product->get_gallery_image_ids();
-$thumbnail_id = get_post_thumbnail_id( $product_id );
+$thumbnail_id = get_post_thumbnail_id( $get_product_id );
 $gallery_shortcode = "";
 $gallery_count = 0;
 $gallery_pre_count = 0;

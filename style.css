@@ -624,6 +624,8 @@ textarea#sample-tile-names-string{pointer-events: none;}
 .gto-custom-results .search-result-cates .category-result:hover h3{color: #fff;}
 .gto-custom-results .search-result-cates .category-result:hover span{color: #fff;}
 
+.glint-variation-options{margin-left: 0; padding-left: 0;}
+
 /* elements */
 #h2-button-with-icon{text-align: center;}
 #h2-button-with-icon a{padding: 10px 20px 6px; border-radius: 5px; background: #f8f8f8; margin: 5px auto; display: inline-block;}
