@@ -625,6 +625,10 @@ textarea#sample-tile-names-string{pointer-events: none;}
 .gto-custom-results .search-result-cates .category-result:hover span{color: #fff;}
 
 .glint-variation-options{margin-left: 0; padding-left: 0;}
+.glint-linked-variations .glint-attribute label{text-transform: capitalize; color: #0d3934;}
+.glint-variation-options .glint-option.glint-option-active .glint-option-value{color: #333; font-weight: 500;}
+.glint-variation-options .glint-option .glint-option-value{font-weight: 300;}
+
 
 /* elements */
 #h2-button-with-icon{text-align: center;}
