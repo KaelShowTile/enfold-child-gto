@@ -65,62 +65,68 @@ else
 }
 else if ($check_product_type == 2) 
 {
-	if ( $product->is_on_sale() ) {
+	if ( $product->is_in_stock() ) {
         $prices = $product->get_variation_prices();
         $step_value = get_post_meta($product->get_id(), '_advanced-qty-step', true);
 
         // Extract the prices array
         $variation_prices = $prices['price'];
 
-        // Get the highest and lowest prices
-        $lowest_price = min($variation_prices);
-        $highest_price = max($variation_prices);
+        if($variation_prices){
 
-        $variation_ids = $product->get_children();
+            // Get the highest and lowest prices
+            $lowest_price = min($variation_prices);
+            $highest_price = max($variation_prices);
 
-        // Initialize variables for storing the custom meta
-        $lowest_box_price = null;
-        $highest_box_price = null;
+            $variation_ids = $product->get_children();
 
-        foreach ($variation_ids as $variation_id) {
-            // Get the price of the current variation   
-            $variation_price = get_post_meta($variation_id, '_price', true);
-            
-            // Check if it matches the lowest price
-            if ($variation_price == $lowest_price) {
-                $variation_step_value = get_post_meta($variation_id, '_advanced-qty-step', true);
-                if (empty($variation_step_value)) {
-                    $lowest_box_price = $lowest_price * $step_value;
+            // Initialize variables for storing the custom meta
+            $lowest_box_price = null;
+            $highest_box_price = null;
+
+            foreach ($variation_ids as $variation_id) {
+                // Get the price of the current variation   
+                $variation_price = get_post_meta($variation_id, '_price', true);
+                
+                // Check if it matches the lowest price
+                if ($variation_price == $lowest_price) {
+                    $variation_step_value = get_post_meta($variation_id, '_advanced-qty-step', true);
+                    if (empty($variation_step_value)) {
+                        $lowest_box_price = $lowest_price * $step_value;
+                    }
+                    else
+                    {
+                        $lowest_box_price = $lowest_price * $variation_step_value;
+                    }
                 }
-                else
+
+                // Check if it matches the highest price
+                if ($variation_price == $highest_price) {
+                    $variation_step_value = get_post_meta($variation_id, '_advanced-qty-step', true);
+                    if (empty($variation_step_value)) {
+
+                        $highest_box_price = $highest_price * $step_value;
+                    }
+                    else
+                    {
+                        $highest_box_price = $highest_price * $variation_step_value;
+                    }
+                }
+
+                //check if lowest price equal highest price
+                if($lowest_box_price == $highest_box_price)
                 {
-                    $lowest_box_price = $lowest_price * $variation_step_value;
-                }
-            }
+                    $box_price = $lowest_box_price;
 
-            // Check if it matches the highest price
-            if ($variation_price == $highest_price) {
-                $variation_step_value = get_post_meta($variation_id, '_advanced-qty-step', true);
-                if (empty($variation_step_value)) {
-
-                    $highest_box_price = $highest_price * $step_value;
-                }
-                else
+                }else
                 {
-                    $highest_box_price = $highest_price * $variation_step_value;
+                    $box_price = $lowest_box_price . ' ~ ' . $highest_box_price;
                 }
             }
 
-            //check if lowest price equal highest price
-            if($lowest_box_price == $highest_box_price)
-            {
-                $box_price = $lowest_box_price;
-
-            }else
-            {
-                $box_price = $lowest_box_price . ' ~ ' . $highest_box_price;
-            }
         }
+
+        
     }
     
 }
