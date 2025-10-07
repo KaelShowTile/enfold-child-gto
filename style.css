@@ -366,6 +366,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #top.product-template-default.single.single-product .related .price .woocommerce-price-suffix{font-size: 0.8rem;}
 #top.product-template-default.single.single-product .related #gto-add-cart-btn{padding: 6px 15px 5px;}
 
+#top .woocommerce-tabs h2{font-size: 1.5rem; font-weight: 700; margin: 20px auto 15px;}
 
 /* concept pages */
 .in-grid-container{padding-top: 20px;}
