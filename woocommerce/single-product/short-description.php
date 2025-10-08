@@ -134,101 +134,47 @@ if ( ! $short_description &&  ! $terms) {
 				        		echo '</p>';
 				        	echo'</li>';
 			        	}
-					}
+					}	
+				}
 
-					/*ACF parameters
+				$get_thickness = $product->get_attribute('pa_thickness');
+				if($get_thickness){
+					echo '<li>';
+						echo '<a class="parent-categories-item">Thickness: </a>';
+						echo '<p>' . esc_html( $get_thickness ) . '</p>';
+					echo'</li>';
+				}
 
-					$has_finish_attr = $product->get_attribute('pa_finish');
+				$get_finish = $product->get_attribute('pa_finish');
+				if($get_finish){
+					echo '<li>';
+						echo '<a class="parent-categories-item">Finish: </a>';
+						echo '<p>' . esc_html( $get_finish ) . '</p>';
+					echo'</li>';
+				}
 
-				    if(get_field('finish') || $has_finish_attr){
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Finish:</p>';
-				        	echo '<p class="child-categories-item">'; 
-							if(get_field('finish')){
-								echo esc_html(the_field('finish'));
-							}else{
-								echo $has_finish_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    }
+				$get_edge = $product->get_attribute('pa_edge');
+				if($get_edge){
+					echo '<li>';
+						echo '<a class="parent-categories-item">Edge: </a>';
+						echo '<p>' . esc_html( $get_edge ) . '</p>';
+					echo'</li>';
+				}
 
-					$has_edge_attr = $product->get_attribute('pa_edge');
+				$get_package = $product->get_attribute('pa_package');
+				if($get_package){
+					echo '<li>';
+						echo '<a class="parent-categories-item">Package: </a>';
+						echo '<p>' . esc_html( $get_package ) . '</p>';
+					echo'</li>';
+				}
 
-				    if(get_field('edge') || $has_edge_attr){
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Edge:</p>';
-				        	echo '<p class="child-categories-item">'; 
-							if(get_field('edge')){
-								echo esc_html(the_field('edge'));
-							}else{
-								echo $has_edge_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    }
-
-					$has_thickness_attr = $product->get_attribute('pa_thickness');
-
-				    if(get_field('thickness') || $has_thickness_attr){
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Thickness:</p>';
-				        	echo '<p class="child-categories-item">'; 
-							if(get_field('thickness')){
-								echo esc_html(the_field('thickness'));
-							}else{
-								echo $has_thickness_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    }
-
-					$has_package_attr = $product->get_attribute('pa_package');
-
-				    if(get_field('package') || $has_package_attr){
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Package:</p>';
-				        	echo '<p class="child-categories-item">'; 
-							if(get_field('package')){
-								echo esc_html(the_field('package'));
-							}else{
-								echo $has_package_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    }
-
-					$has_slip_rate_attr = $product->get_attribute('pa_slip_rate');
-
-				    if(get_field('slip_rate') || $has_slip_rate_attr){
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Slip Rate:</p>';
-				        	echo '<p class="child-categories-item">'; 
-							if(get_field('slip_rate')){
-								echo esc_html(the_field('slip_rate'));
-							}else{
-								echo $has_slip_rate_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    }
-
-					$has_grout_attr = $product->get_attribute('pa_grout-colour');
-
-				    if(get_field('grout') || $has_grout_attr){
-				        echo '<li>';
-				        	echo '<p class="parent-categories-item">Grout Colour:</p>';
-				        	echo '<p class="child-categories-item">'; 
-							if(get_field('grout')){
-								echo esc_html(the_field('grout'));
-							}else{
-								echo $has_grout_attr;
-							}
-				        	echo '</p>';
-				        echo'</li>';
-				    } 
-						
-					*/
+				$get_grout_colour = $product->get_attribute('pa_grout-colour');
+				if($get_grout_colour){
+					echo '<li>';
+						echo '<a class="parent-categories-item">Grout Colour: </a>';
+						echo '<p>' . esc_html( $get_grout_colour ) . '</p>';
+					echo'</li>';
 				}
 			?>
 
