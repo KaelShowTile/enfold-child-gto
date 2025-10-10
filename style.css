@@ -303,6 +303,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 .cff-form-description{text-align: center;}
 #fbuilder label{font-size: 1rem; font-weight: 400 !important;}
 #fbuilder .full-width-incol.fields{width: 100% !important;}
+#fbuilder h2.cff-form-title a{font-size: 2rem;}
 #fbuilder .remove-col-width{display: inline-block; margin-right: 40px;}
 #fbuilder .add-m-symbol .dfield:after{content: "m"; position: absolute; right: 12px; top: 12px;}
 #fbuilder .add-m-symbol .summary-field-value{position: relative;}
