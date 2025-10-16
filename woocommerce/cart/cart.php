@@ -131,7 +131,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 									$product_sqm_per_box= get_post_meta($product_id, '_advanced-qty-step', true); 
 									$_product = $cart_item['data'];
 		        					$product_quantity = $cart_item['quantity']; 
-		        					$product_box = round($product_quantity/$product_sqm_per_box, 0, PHP_ROUND_HALF_UP);
+									$product_box = 1;
+									if($product_sqm_per_box){
+										$product_box = round($product_quantity/$product_sqm_per_box, 0, PHP_ROUND_HALF_UP);
+									}
+		        					
 		        					$product_suffix = get_post_meta($product_id, '_advanced-qty-price-suffix', true); 
 
 									if ( $_product->is_sold_individually() ) {
@@ -155,41 +159,26 @@ do_action( 'woocommerce_before_cart' ); ?>
 										false
 									);
 
-								if ($_product->is_sold_individually())
-								{
+								if ($_product->is_sold_individually()){
 							        echo'<div class="quantity"><p class="sold-individually-quantity">1</p></div>';
 							    }
-							    else
-							    {
+							    else{
 							    	echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); 
 							    }
 
-								//if box rate has not been setup
-								if($product_suffix == "/m2" || $product_suffix == "/ m2" || $product_suffix == "m2"){ ?>
-
-									<p class="M2-mark checkout-M2-mark">m2</p>
-
-								<?php }else{ 
-
+								//Suffix & step value
+								if($product_suffix == "/m2" || $product_suffix == "/ m2" || $product_suffix == "m2"){
+									echo '<p class="M2-mark checkout-M2-mark">m2</p>';
+								}
+								else{ 
 									$product_suffix = str_replace("/", "", $product_suffix);
+									echo '<p class="M2-mark checkout-M2-mark">' . $product_suffix . '</p>' ; 
+								}; 
+								
+								echo '</div>';
 
-									?>
-									
-									<p class="M2-mark checkout-M2-mark"><?php echo $product_suffix ?></p>
-
-								<?php } ?>
-
-								</div>
-
-								<?php 
-								//if box rate has not been setup
-								if($product_suffix == "/m2" || $product_suffix == "/ m2" || $product_suffix == "m2")
-								{ ?>
-
-									<p class="checkout-product-box-quantity"><?php echo $product_box; ?> Boxes, <?php echo $product_sqm_per_box; ?> m2/Box</p>
-
-								<?php }else{  
-
+								if($product_suffix == "/m2" || $product_suffix == "/ m2" || $product_suffix == "m2"){
+									echo '<p class="checkout-product-box-quantity">' . $product_box . ' Boxes, ' . $product_sqm_per_box . ' m2/Box</p>';
 								} ?>
 
 							</div>

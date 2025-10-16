@@ -96,7 +96,6 @@ add_action( 'init', function() {
     remove_action( 'do_feed_rss', 'do_feed_rss', 10, 1 );
 });
 
-
 //acf auto update post object field
 add_action('acf/save_post', 'sync_acf_post_object', 20);
 function sync_acf_post_object($post_id) 
@@ -157,7 +156,6 @@ function enqueue_free_sample_scripts() {
     wp_enqueue_script('generate-sample-script', get_stylesheet_directory_uri() . '/js/ajax-generate-sample-set.js', array('jquery'), null, true);
 }
 add_action('wp_enqueue_scripts', 'enqueue_free_sample_scripts');
-
 
 //Enqueue to cart js
 function enqueue_ajax_add_to_cart_js() {
@@ -235,6 +233,29 @@ function enqueue_nonce_refresh_script() {
         'ajax_url' => admin_url('admin-ajax.php'),
         'nonce' => wp_create_nonce('refresh_nonce_action')
     ));
+}
+
+//add shipping logs
+add_action('woocommerce_cart_shipping_packages', 'log_shipping_debug_info', 1);
+function log_shipping_debug_info($packages) {
+    $logger = wc_get_logger();
+    $logger->debug('--- start calculate shipping fee ---', array('source' => 'shipping-debug'));
+    
+    // Record orginal package
+    $logger->debug('orginal shipping package: ' . count($packages), array('source' => 'shipping-debug'));
+    foreach ($packages as $index => $package) {
+        $logger->debug("package {$index} includes: " . print_r($package['contents'], true), array('source' => 'shipping-debug'));
+    }
+    
+    // Record splited package
+    $new_packages = split_cart_by_shipping_class($packages); 
+    $logger->debug('splited package quantity: ' . count($new_packages), array('source' => 'shipping-debug'));
+    foreach ($new_packages as $index => $package) {
+        $logger->debug("splited package {$index} includes: " . print_r($package['contents'], true), array('source' => 'shipping-debug'));
+    }
+    
+    $logger->debug('--- Finish calculation ---', array('source' => 'shipping-debug'));
+    return $new_packages;
 }
 
 //fliter main function
