@@ -138,6 +138,14 @@ function sync_acf_post_object($post_id)
     }
 }
 
+// Images auto-crop quality
+add_filter('wp_editor_set_quality', function($quality, $mime_type) {
+    if ($mime_type === 'image/jpeg') return 60;     // JPEG
+    if ($mime_type === 'image/webp') return 60;     // WebP
+    if ($mime_type === 'image/png') return 6;       // PNG compression level
+    return $quality; // Default for others
+}, 10, 2);
+
 //load filter ajax file 
 function enqueue_filter_scripts() {
     // Only enqueue on product archive pages
