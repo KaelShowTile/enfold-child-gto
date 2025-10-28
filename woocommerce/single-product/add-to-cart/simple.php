@@ -308,23 +308,22 @@ else
 		</div>	
 
 		<div class="single-product-sample-container grid-view">
+	
+			<?php if($if_allow_sample): ?>
 
-			
-			<?php if($if_allow_sample != "No"){ ?>
+			<div class = "sample-delivery-explaination">
 
-				<div class = "sample-delivery-explaination">
+				<p>Sample size is 100x100mm and the sample is free.</p>
+				<p>Only postage is $15 per one set, Australia wide.</p>
+				<p>In one set of sample, you can order up to 5 different tiles.</p>
 
-					<p>Sample size is 100x100mm and the sample is free.</p>
-					<p>Only postage is $15 per one set, Australia wide.</p>
-					<p>In one set of sample, you can order up to 5 different tiles.</p>
+			</div>
 
-				</div>
-
-				<div class="sample-delivery-btn">
-					<button class="sample-button" id="sample-button-notification" data-product-name="<?php echo $product_name; ?>" data-product-thumbnail="<?php echo esc_url($product_thumbnail[0]); ?>" data-product-permalink="<?php echo esc_url($product_permalink); ?>" rel="nofollow">Get Free Sample</button>
-				</div> 
+			<div class="sample-delivery-btn">
+				<?php cht_add_sample_btn(); ?>
+			</div> 
 				
-			<?php } ?>
+			<?php endif; ?>
 
 		</div>
 
