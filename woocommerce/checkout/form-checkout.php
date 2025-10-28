@@ -63,9 +63,5 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 </form>
 
-<div class="hide-this-area">
-	<?php display_sample_list_for_checkout(); ?>
-</div>
-
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 

@@ -158,13 +158,6 @@ function enqueue_filter_scripts() {
 }
 add_action('wp_enqueue_scripts', 'enqueue_filter_scripts');
 
-//load free sample ajax file 
-function enqueue_free_sample_scripts() {
-    wp_enqueue_script('sample-script', get_stylesheet_directory_uri() . '/js/ajax-free-sample.js', array('jquery'), null, true);
-    wp_enqueue_script('generate-sample-script', get_stylesheet_directory_uri() . '/js/ajax-generate-sample-set.js', array('jquery'), null, true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_free_sample_scripts');
-
 //Enqueue to cart js
 function enqueue_ajax_add_to_cart_js() {
     wp_enqueue_script('ajax-add-to-cart', get_stylesheet_directory_uri() . '/js/ajax-add-to-cart.js', array('jquery'), '1.0', true);
@@ -371,140 +364,6 @@ function filter_products() {
 add_action('wp_ajax_filter_products', 'filter_products');
 add_action('wp_ajax_nopriv_filter_products', 'filter_products');
 
-//load sample list
-function display_sample_list() {
-
-    $sample_tile_product_id = get_field('free_sample_product', 29314);
-    $tiles_in_one_set = get_field('tiles_in_one_set', 29314);
-
-    ?>
-    <div class="sample-list-header">
-        <h2>Sample Tiles</h2>
-        <p class="free-tile-explaination">1 set = 5 tile samples. Postage $15/ set (Australia-wide). If you order more than 5 tiles, it will be considered a 2nd sample set, incurring an additional postage fee.</p>
-    </div>
-    <div id="sample-list"></div>
-    <script>
-        jQuery(document).ready(function($) {
-            // Function to update and render the sample list
-            function updateSampleList() 
-            {
-                let sampleList = JSON.parse(localStorage.getItem('sampleList')) || [];
-                var sampleProductID = "<?php echo $sample_tile_product_id; ?>";
-                var oneSet = "<?php echo $tiles_in_one_set; ?>";
-                if (sampleList.length > 0) 
-                {
-                    let sampleTileQuantity = Math.ceil(sampleList.length / oneSet);
-                    $('#sample-list').html('<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0"><tbody>' + sampleList.map((item, index) => 
-                        '<tr class="woocommerce-cart-form__cart-item cart_item"><td class="product-remove"><span class="delete-icon remove" data-index="' + index + '">×</span></td><td class="product-thumbnail"><img src="' + item.thumbnail + '"></td><td class="product-name"><a href="' + item.permalink + '">' + item.name + ' </a></td></tr>').join('') + '</tbody></table><div id="free-sample-btn-container"><a href="/cart/?add-to-cart=' + sampleProductID + '&quantity=' + sampleTileQuantity + '" id="generate-tile-set" rel="nofollow">Add to cart</a></div>');
-                }
-                else
-                {
-                    const HeaderDIV = document.querySelector('.sample-list-header');
-                    const ListDIV = document.querySelector('.free-sample-list');
-                    HeaderDIV.classList.add('hide-this-area');
-                    ListDIV.classList.add('hide-this-area');
-                }
-            }
-
-            function refreshCart() {
-                // Use AJAX to refresh the cart content  
-                $.get('/?wc-ajax=get_refreshed_fragments', function(response) {
-                    if (response && response.fragments) {
-                        $.each(response.fragments, function(key, value) {
-                            $(key).replaceWith(value);
-                        });
-                    }
-                });
-            }
-
-            // Initial load of the sample list   
-            updateSampleList();
-
-            // Event delegation for delete icons
-            $('#sample-list').on('click', '.delete-icon', function() {
-                const index = $(this).data('index');
-                let sampleList = JSON.parse(localStorage.getItem('sampleList')) || [];
-                sampleList.splice(index, 1); // Remove item from array
-                localStorage.setItem('sampleList', JSON.stringify(sampleList)); // Update localStorage
-                updateSampleList(); // Re-render the list
-            });
-        });
-    </script>
-    <?php
-}
-
-
-// Add a textarea for sample tile name in checkout field
-add_filter('woocommerce_checkout_fields', 'add_sample_tile_names_field');
-
-function add_sample_tile_names_field($fields) {
-    $fields['billing']['sample_tile_names_string'] = array(
-        'type'        => 'textarea',
-        'id'          => 'sample-tile-names-string',
-        'label'       => __('Sample Tile Names'),
-        'required'    => false,
-    );
-    return $fields;
-}
-
-//load sample tile names on checkout page 
-function display_sample_list_for_checkout() {
-
-    $sample_tile_product_id = get_field('free_sample_product', 29314);
-    $tiles_in_one_set = get_field('tiles_in_one_set', 29314);
-
-    ?>
-    <textarea id="sample-tile-names-string"></textarea>
-    <script>
-        jQuery(document).ready(function($) {
-            // Function to update and render the sample list
-            function getSampleList() {
-                let sampleList = JSON.parse(localStorage.getItem('sampleList')) || [];
-                let passName = localStorage.getItem('passName') || '';
-                $('#sample-tile-names-string').val(passName);
-            }
-            // Initial load of the sample list   
-            getSampleList();
-
-        });
-    </script>
-    <?php
-}
-
-
-//save sample tiles name to order's ACF field 
-add_action('woocommerce_checkout_create_order', 'save_sample_tile_names_to_order', 10, 2);
-
-function save_sample_tile_names_to_order($order, $data) {
-    // Get the sample tile names from the posted data
-    if (isset($_POST['sample_tile_names_string'])) {
-        $sample_tile_names = sanitize_textarea_field($_POST['sample_tile_names_string']);
-        
-        // Check if the order contains the sample tile product
-        $sample_tile_product_id = get_field('free_sample_product', 29314);
-        $has_sample_tile_product = false;
-
-        foreach ($order->get_items() as $item) {
-            if ($item->get_product_id() == $sample_tile_product_id) {
-                $has_sample_tile_product = true;
-                break;
-            }
-        }
-
-        // If the sample tile product is in the order, save the textarea value  
-        if ($has_sample_tile_product) {
-            $order->update_meta_data('sample_tiles', $sample_tile_names);
-        } ?>
-
-        <script>
-        jQuery(document).ready(function($) {
-            localStorage.clear();
-        });
-        </script>
-
-    <?php }
-}
-
 
 //disable enfold extra divs & sorting function for WooCommerce pages  
 add_action( 'init', 'remove_enfold_action' );
@@ -647,23 +506,6 @@ function add_custom_field_to_order_email($item_id, $item, $order) {
     // Check if the field has a value
     if ($size_mm) {
         echo '<p><strong>Size:</strong> ' . esc_html($size_mm) . '</p>';
-    }
-}
-
-//add ACF field "sample_tile" on order email
-add_action( 'woocommerce_email_after_order_table', 'add_sample_tiles_to_email', 10, 4 );
-
-function add_sample_tiles_to_email( $order, $sent_to_admin, $plain_text, $email ) {
-    // Get the order ID
-    $order_id = $order->get_id();
-
-    // Retrieve the custom field value
-    $sample_tiles = get_post_meta( $order_id, 'sample_tiles', true );
-
-    // Display the custom field in the email
-    if ( ! empty( $sample_tiles ) ) {
-        echo '<h2>' . esc_html__( 'Sample Tiles', 'your-text-domain' ) . '</h2>';
-        echo '<p>' . esc_html( $sample_tiles ) . '</p>';
     }
 }
 
@@ -837,7 +679,7 @@ function sample_product_shipping_init() {
                 }
 
                 //shipping fee setting for sample product
-                $cost = 15 * $total_quantity;
+                $cost = 15 * ceil($total_quantity / 5);
 
                 $this->add_rate([
                     'id' => $this->id,

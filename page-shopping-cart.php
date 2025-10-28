@@ -46,11 +46,7 @@
 
 					$avia_config['size'] = avia_layout_class( 'main' , false) == 'fullsize' ? 'entry_without_sidebar' : 'entry_with_sidebar';
 
-					echo '<div class="free-sample-list">';
-		
-						display_sample_list();
-									
-					echo'</div>';
+					echo '<h1>Shopping Cart</h1>';
 
 					get_template_part( 'includes/loop', 'page' );
 					?>

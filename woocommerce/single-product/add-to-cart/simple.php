@@ -29,7 +29,6 @@ $product_id = $product->get_id();
 $product_name = $product->get_name();
 $product_permalink = get_permalink($product_id);
 $product_thumbnail = wp_get_attachment_image_src($product->get_image_id(), 'thumbnail');
-$if_allow_sample = esc_html (get_field('sample_available_check', $product_id));
 
 $step_value = get_post_meta($product_id, '_advanced-qty-step', true); 
 $box_price = 0;
@@ -37,6 +36,11 @@ $product_suffix = get_post_meta($product_id, '_advanced-qty-price-suffix', true)
 
 $m2_price = $product->is_on_sale() ? $product->get_sale_price() : $product->get_regular_price();
 
+$if_allow_sample = null;
+//check sample exist, function from plugin
+if ( class_exists( 'CHT_Sample_Products_Frontend' ) ){
+	$if_allow_sample = CHT_Sample_Products_Frontend::get_sample_product_id($product_id);
+}
 
 
 if (empty($step_value)) {
@@ -199,7 +203,7 @@ else
 
 		<div class="single-product-sample-container grid-view">
 
-			<?php if($if_allow_sample != "No"){ ?>
+			<?php if($if_allow_sample): ?>
 
 			<div class = "sample-delivery-explaination">
 
@@ -210,10 +214,10 @@ else
 			</div>
 
 			<div class="sample-delivery-btn">
-				<button class="sample-button" id="sample-button-notification" data-product-name="<?php echo $product_name; ?>" data-product-thumbnail="<?php echo esc_url($product_thumbnail[0]); ?>" data-product-permalink="<?php echo esc_url($product_permalink); ?>" rel="nofollow">Get Free Sample</button>
+				<?php cht_add_sample_btn(); ?>
 			</div> 
 				
-			<?php } ?>
+			<?php endif; ?>
 
 		</div>
 
