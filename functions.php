@@ -555,6 +555,18 @@ function custom_cart_header_fragment($fragments) {
     return $fragments;
 }
 
+//Showing a woocommerce style notification on single product page after adding a sample      
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
+
+function enqueue_custom_scripts() {
+    if (is_product()) {
+        wp_enqueue_script('custom-notification', get_stylesheet_directory_uri() . '/js/add-sample-notification.js', array('jquery'), null, true);
+        wp_localize_script('custom-notification', 'customData', array(
+            'productName' => get_the_title(),
+        ));
+    }
+}
+
 //auto select parent categories
 function auto_select_parent_category($post_id, $post, $update) {
     // Only run for products
