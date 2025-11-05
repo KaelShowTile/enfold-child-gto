@@ -83,7 +83,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #gto-mega-menu-inner .tab.active_tab{background: #fff; width: 100%;}
 #gto-mega-menu-inner .tab_content{background: #fff; border-width: 0;}
 #gto-mega-menu-inner .tab_content .tab_inner_content .flex_column{text-align: center;}
-#gto-mega-menu-inner .tab_content .tab_inner_content .flex_column a{padding: 20px 0 10px; display: inline-block;color: #0d3934;}
+#gto-mega-menu-inner .tab_content .tab_inner_content .flex_column a{padding: 10px 0 5px; display: inline-block;color: #0d3934;}
 #gto-mega-menu-inner .tab_content .tab_inner_content .flex_column a img{width: 200px;}
 
 #gto-mega-menu-container .av_three_fifth{width: 62%; margin-left: 0;}
