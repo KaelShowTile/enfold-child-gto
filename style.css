@@ -77,7 +77,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 .av_secondary_right .sub_menu li.menu-item .av-icon-char::before{display: block; text-align: center; margin: 0 auto 6px !important; width: 20px; height: 20px; line-height: 22px; border-radius: 50px; font-size: 1.25rem;}
 
 #gto-mega-menu-container{position: fixed; z-index: 99999; width: 100%; background: #fff; max-width: 90%; margin: 0 5%;display: none;}
-#gto-mega-menu-inner{padding: 0 40px;}
+#gto-mega-menu-inner{padding: 0 40px; margin: 0;}
 #gto-mega-menu-inner .tab_titles{border-right: 2px solid #f0f0f0;}
 #gto-mega-menu-inner .tab{font-size: 1rem; color: #0d3934; border-width: 0;}
 #gto-mega-menu-inner .tab.active_tab{background: #fff; width: 100%;}
@@ -89,11 +89,13 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #gto-mega-menu-container .av_three_fifth{width: 62%; margin-left: 0;}
 #gto-mega-menu-container .av_two_fifth{width: 38%;}
 #gto-mega-menu-container .mega-menu-bottom-container{width: 100%; display: flex;}
-#gto-mega-menu-container .mega-menu-contact{background: #fafafa; padding: 30px 40px;}
+#gto-mega-menu-container .mega-menu-contact{background: #fafafa; padding: 10px 40px;}
 #gto-mega-menu-container .mega-menu-contact h3{font-size: 1.4rem; font-weight: 700;}
 #gto-mega-menu-container .mega-menu-contact p, #gto-mega-menu-container .mega-menu-contact b{font-size: 0.85rem; color: #0d3934; margin: 0;}
 #gto-mega-menu-container .newsletter-container{background: #0d3934;}
 #gto-mega-menu-container .newsletter-container .av_one_half{padding: 30px; color: #fff;}
+#gto-mega-menu-container .newsletter-container .av_one_half fieldset{margin-bottom: 0;}
+#gto-mega-menu-container .newsletter-container .av_one_half form{margin-bottom: 0;}
 #gto-mega-menu-container .newsletter-container .av_one_half h3{font-size: 1.4rem; font-weight: 400; color: #fff;}
 #gto-mega-menu-container .newsletter-container .av_one_half .form_element{width: 46%; margin: 0 2%; clear: none;}
 #gto-mega-menu-container .newsletter-container i{font-style: italic; letter-spacing: 0.5px; font-weight: 300; font-size: 0.85rem;}
