@@ -146,6 +146,12 @@ add_filter('wp_editor_set_quality', function($quality, $mime_type) {
     return $quality; // Default for others
 }, 10, 2);
 
+//load mega menu js
+function enqueue_mega_menu_scripts() {
+    wp_enqueue_script('mega-menu', get_stylesheet_directory_uri() . '/js/mega-menu.js', array('jquery'), null, true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_mega_menu_scripts');
+
 //load filter ajax file 
 function enqueue_filter_scripts() {
     // Only enqueue on product archive pages
