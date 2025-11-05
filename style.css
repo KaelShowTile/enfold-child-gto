@@ -89,7 +89,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #gto-mega-menu-container .av_three_fifth{width: 62%; margin-left: 0;}
 #gto-mega-menu-container .av_two_fifth{width: 38%;}
 #gto-mega-menu-container .mega-menu-bottom-container{width: 100%; display: flex;}
-#gto-mega-menu-container .mega-menu-contact{background: #fafafa; padding: 10px 40px;}
+#gto-mega-menu-container .mega-menu-contact{background: #fafafa; padding: 20px 40px;}
 #gto-mega-menu-container .mega-menu-contact h3{font-size: 1.4rem; font-weight: 700;}
 #gto-mega-menu-container .mega-menu-contact p, #gto-mega-menu-container .mega-menu-contact b{font-size: 0.85rem; color: #0d3934; margin: 0;}
 #gto-mega-menu-container .newsletter-container{background: #0d3934;}
@@ -898,6 +898,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 	#header #header_meta .phone-info.with_nav{margin-right: 0;}
 	#header_main .container.av-logo-container .avia-svg-logo .av-contains-svg svg{max-height: 36px;}
+	#gto-mega-menu-container{display: none !important;}
 
 	#home-description-container .flex_column{padding: 0 10px;}
 	.responsive #top #footer-container .flex_column{width: 48%; margin: 0 1%;}
@@ -1019,6 +1020,10 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 	.woocommerce-ajax-search-results .results-section{text-align: left;}
 	.responsive .woocommerce-ajax-search-results .results-section{margin-top: 20px;}
+}
+
+@media screen and (min-width: 641px) {
+  #top #header .avia_mega_div{display: none !important;}
 }
 
 @media only screen and (max-width: 480px) 

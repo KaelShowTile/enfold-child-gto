@@ -304,7 +304,7 @@ $body_classes = implode( ' ', array_unique( array_filter( $body_classes ) ) );
 
 					<div class="flex_column av_three_fifth flex_column_div newsletter-container">
 						<div class="flex_column av_one_half el_before_av_one_half avia-builder-el-first first flex_column_div">
-						<h3>Get the Latest Design Trends & 10% Off Code</h3>
+						<h3>Get the Latest Design Trends</h3>
 						<i>Join our newsletter now!</i>
 						</div>
 
