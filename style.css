@@ -896,6 +896,9 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#top .avia-slideshow-arrows.avia-slideshow-controls a:before{ background: transparent;}
 	#categroies-full-width-slider{display: inline-block;}
 
+	#header #header_meta .phone-info.with_nav{margin-top: -25px;}
+	#header_main .container.av-logo-container .avia-svg-logo .av-contains-svg svg{max-height: 36px;}
+
 	#home-description-container .flex_column{padding: 0 10px;}
 	.responsive #top #footer-container .flex_column{width: 48%; margin: 0 1%;}
 	#contact-form-container .flex_column.flex_column_table_cell{padding: 0;}
