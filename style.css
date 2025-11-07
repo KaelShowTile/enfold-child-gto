@@ -893,6 +893,15 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#top .woocommerce-ajax-search-container .woocommerce-ajax-search-field{width: 100%; padding: 11px 6px 10px 44px; font-size: 0.8rem;}
 	#top .woocommerce-ajax-search-container .woocommerce-ajax-search-form .search-icon{top: 10px;}
 
+	.responsive #top .av-main-nav .menu-item-avia-special{display: none !important;}
+	.glint-menu-toggle-container #glint-menu-toggle.active{display: none;}
+	.glint-menu-toggle-container{right: auto; left: 20px; top: 45px;}
+	.glint-menu-toggle-container .menu-icon{width: 24px;}
+	.glint-menu-toggle-container .menu-icon span{height: 3px; background: #ccc;}
+
+	#glint-mobile-menu .glint-menu-panels{max-width: 400px;right: -65%;}
+	#glint-mobile-menu .menu-panel{padding: 70px 30px;}
+	.mobile-mega-menu-item.glint-menu-two-col{width: 48%; margin-right: 2%; display: inline-block;}
 }
 
 @media only screen and (max-width: 640px) 

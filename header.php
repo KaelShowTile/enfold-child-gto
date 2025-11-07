@@ -287,6 +287,8 @@ $body_classes = implode( ' ', array_unique( array_filter( $body_classes ) ) );
 
 		do_action( 'ava_after_main_container' );
 
+		echo do_shortcode('[glint_mobile_menu_button]');
+
 		$submenu_page = get_page_by_path('mega-menu');
 		if ($submenu_page) {
 			$submenu_page_content = apply_filters('the_content', $submenu_page->post_content); 
