@@ -895,14 +895,16 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 	.responsive #top .av-main-nav .menu-item-avia-special{display: none !important;}
 	.glint-menu-toggle-container #glint-menu-toggle.active{display: none;}
-	.glint-menu-toggle-container{right: auto; left: 20px; top: 45px;}
+	.glint-menu-toggle-container{right: auto; left: 20px; top: 0;}
 	.glint-menu-toggle-container .menu-icon{width: 24px;}
 	.glint-menu-toggle-container .menu-icon span{height: 3px; background: #ccc;}
 
-	#glint-mobile-menu .glint-menu-panels{max-width: 400px;right: -65%;}
-	#glint-mobile-menu .menu-panel{padding: 70px 30px;}
-	#glint-mobile-menu .mobile-mega-menu-item{color: #006459; font-weight: 600;}
-	.mobile-mega-menu-item.glint-menu-two-col{width: 48%; margin-right: 2%; display: inline-block;}
+	#glint-mobile-menu .glint-menu-panels{max-width: 400px;}
+	#glint-mobile-menu .menu-panel{padding: 20px 20% 20px 30px;}
+	#glint-mobile-menu .mobile-mega-menu-item{color: #006459; font-weight: 600; vertical-align: top;}
+	#glint-mobile-menu .mobile-mega-menu-item a{ font-size: 0.85rem; display: inline-block; width: 100%; text-align: center; margin: 0 auto 20px;}
+	#glint-mobile-menu .mobile-mega-menu-item a img{margin-bottom: -3px;}
+	.mobile-mega-menu-item.glint-menu-two-col{width: 48%; margin-right: 2%; display: inline-block; clear: both;}
 }
 
 @media only screen and (max-width: 640px) 
