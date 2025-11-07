@@ -172,6 +172,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 
 /* home */
 #home-categories-container h1{font-weight: 800; text-transform: capitalize; letter-spacing: 0; color: #666; font-size: 2.3rem;}
+#home-categories-container h2{font-size: 2.5rem; margin: 20px auto 0; font-weight: 700;}
 #home-categories-container h3{font-size: 1.1rem; letter-spacing: 0; color: #444; text-transform: capitalize;}
 #home-categories-container #h2-button-with-icon{margin-top: -40px;}
 #home-categories-container .avia-image-container.avia-align-center{z-index: -1;}
@@ -670,7 +671,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 /* elements */
 #h2-button-with-icon{text-align: center;}
 #h2-button-with-icon a{padding: 10px 20px 6px; border-radius: 5px; background: #f8f8f8; margin: 5px auto; display: inline-block;}
-#h2-button-with-icon h2{display: inline-block; padding-right: 5px; font-weight: 300;}
+#h2-button-with-icon h3{display: inline-block; padding-right: 5px; font-weight: 300;}
 
 .color-product-list-slider .product-discount-rate{position: absolute; z-index: 9; background: #f7849d; font-weight: 600; color: #fff; padding: 5px 10px 3px; margin: 10px; border-radius: 5px; box-shadow: 1px 1px 5px 3px rgba(0, 0, 0, 0.1);}
 
