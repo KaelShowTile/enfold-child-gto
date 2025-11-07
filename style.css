@@ -901,6 +901,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 	#glint-mobile-menu .glint-menu-panels{max-width: 400px;right: -65%;}
 	#glint-mobile-menu .menu-panel{padding: 70px 30px;}
+	#glint-mobile-menu .mobile-mega-menu-item{color: #006459; font-weight: 600;}
 	.mobile-mega-menu-item.glint-menu-two-col{width: 48%; margin-right: 2%; display: inline-block;}
 }
 
