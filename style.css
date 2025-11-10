@@ -827,6 +827,22 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#home-feature-container.avia-section-large .content{padding-top: 30px; padding-bottom: 30px;}
 }
 
+@media only screen and (max-width: 980px){
+	.responsive #top .av-main-nav .menu-item-avia-special{display: none !important;}
+	.glint-menu-toggle-container #glint-menu-toggle.active{display: none;}
+	.glint-menu-toggle-container{right: auto; left: 20px; top: 10px; position: fixed;}
+	.glint-menu-toggle-container .menu-icon{width: 24px;}
+	.glint-menu-toggle-container .menu-icon span{height: 3px; background: #ccc;}
+
+	.glint-menu-panels{right: -50%;}
+	#glint-mobile-menu .glint-menu-panels{max-width: 400px;}
+	#glint-mobile-menu .menu-panel{padding: 20px 20% 20px 30px;}
+	#glint-mobile-menu .mobile-mega-menu-item{color: #006459; font-weight: 600; vertical-align: top;}
+	#glint-mobile-menu .mobile-mega-menu-item a{ font-size: 0.85rem; display: inline-block; width: 100%; text-align: center; margin: 0 auto 20px;}
+	#glint-mobile-menu .mobile-mega-menu-item a img{margin-bottom: -3px;}
+	.mobile-mega-menu-item.glint-menu-two-col{width: 48%; margin-right: 2%; display: inline-block; clear: both;}
+}
+
 @media only screen and (max-width: 768px) 
 {
 	.responsive #top #wrap_all .container{width: 90%; max-width: 90%;}
@@ -853,7 +869,9 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	.av-hamburger-inner, .av-hamburger-inner::before, .av-hamburger-inner::after{width: 25px; height: 3px; background-color: #ccc !important;}
 	.av-hamburger-inner::before{top: -8px;}
 	.av-hamburger-inner::after{bottom: -8px;}
-
+	
+	.glint-menu-panels{right: -100%;}
+	.glint-menu-toggle-container{top:0; position: absolute;}
 	#mega-menu-wrap-avia .mega-menu-toggle.mega-menu-open + #mega-menu-avia{background: #fff; padding: 60px 10px 0 20px; z-index: 99999; opacity: 0.99; -webkit-transform: translate3d(0, 0, 0);}
 	#mega-menu-wrap-avia #mega-menu-avia > li.mega-menu-item.mega-current-menu-item > a.mega-menu-link, #mega-menu-wrap-avia #mega-menu-avia > li.mega-menu-item.mega-current-menu-ancestor > a.mega-menu-link, #mega-menu-wrap-avia #mega-menu-avia > li.mega-menu-item.mega-current-page-ancestor > a.mega-menu-link{background: #fff;}
 	#mega-menu-wrap-avia #mega-menu-avia > li.mega-menu-item.mega-toggle-on > a.mega-menu-link{ background: #fff;}
@@ -909,19 +927,6 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	.phone-info.with_nav div, .phone-info.with_nav .woocommerce-ajax-search-container{width: 100%; max-width: 100%;}
 	#top .woocommerce-ajax-search-container .woocommerce-ajax-search-field{width: 100%; padding: 11px 6px 10px 44px; font-size: 0.8rem; border-radius: 5px;}
 	#top .woocommerce-ajax-search-container .woocommerce-ajax-search-form .search-icon{top: 10px;}
-
-	.responsive #top .av-main-nav .menu-item-avia-special{display: none !important;}
-	.glint-menu-toggle-container #glint-menu-toggle.active{display: none;}
-	.glint-menu-toggle-container{right: auto; left: 20px; top: 0;}
-	.glint-menu-toggle-container .menu-icon{width: 24px;}
-	.glint-menu-toggle-container .menu-icon span{height: 3px; background: #ccc;}
-
-	#glint-mobile-menu .glint-menu-panels{max-width: 400px;}
-	#glint-mobile-menu .menu-panel{padding: 20px 20% 20px 30px;}
-	#glint-mobile-menu .mobile-mega-menu-item{color: #006459; font-weight: 600; vertical-align: top;}
-	#glint-mobile-menu .mobile-mega-menu-item a{ font-size: 0.85rem; display: inline-block; width: 100%; text-align: center; margin: 0 auto 20px;}
-	#glint-mobile-menu .mobile-mega-menu-item a img{margin-bottom: -3px;}
-	.mobile-mega-menu-item.glint-menu-two-col{width: 48%; margin-right: 2%; display: inline-block; clear: both;}
 
 	#top #home-feature-container .flex_column.av_one_fourth{width: 46%; margin: auto 2%;}
 }
