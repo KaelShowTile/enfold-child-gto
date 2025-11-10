@@ -799,9 +799,9 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	.customer-review-container .customer-rating-container{width: 100%; margin-right: 0; margin-bottom: 40px;}
 	.customer-review-container .rating-container{width: 100%;}
 
-	#top #header #header_main .av-logo-container{height: 80px;}
+	#top #header #header_main .av-logo-container{height: 80px;padding: 0;}
 	#header_main .container.av-logo-container .avia-svg-logo .av-contains-svg{margin: 15px 0 0 10px; height: 50px;}
-	#header #header_meta{width: 50%;}
+	#header #header_meta{width: 50%; margin-right: 0;}
 	.av_secondary_right .sub_menu{display: none;}
 	#header #header_meta .phone-info.with_nav{margin-right: 0;}
 	.html_header_top .av_bottom_nav_header #header_main_alternate .main_menu ul:first-child li a{padding: 0 8px;}
