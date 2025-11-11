@@ -835,7 +835,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	.glint-menu-toggle-container .menu-icon span{height: 3px; background: #ccc;}
 
 	.glint-menu-panels{right: -50%;}
-	#glint-mobile-menu .glint-menu-panels{max-width: 400px;}
+	#glint-mobile-menu .glint-menu-panels{max-width: 400px; width: 94%;}
 	#glint-mobile-menu .menu-panel{padding: 20px 20% 20px 25px;}
 	#glint-mobile-menu .glint-menu-panels .menu-items{margin: auto -5% auto 0;}
 	
@@ -858,7 +858,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#glint-mobile-menu .submenu-header .mobile-mega-menu-item.with-icon.top-border h5{font-size: 1.25rem; color: #106959; text-transform: uppercase; font-weight: 700;}
 
 	#glint-mobile-menu .mobile-mega-menu-item.without-icon{padding: 8px 0 12px 0; width: calc(100% - 20px); margin-left: 20px;}
-	#glint-mobile-menu .mobile-mega-menu-item.without-icon p{margin: -2px 0 0; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa;}
+	#glint-mobile-menu .mobile-mega-menu-item.without-icon p{margin: -2px 0 0; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa;}
 	#glint-mobile-menu .mobile-mega-menu-item.without-icon h5{text-transform: capitalize; color: #106959; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px;}
 
 	#glint-mobile-menu .mobile-mega-menu-item a{ font-size: 0.85rem; display: inline-block; width: 100%; text-align: left; line-height: 1.25; margin: 0 auto 20px;}
