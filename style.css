@@ -855,7 +855,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#glint-mobile-menu .submenu-header .mobile-mega-menu-item.without-icon{margin-left: 0; width: 100%; margin-bottom: 10px; padding-top: 0;}
 	#glint-mobile-menu .submenu-header img{display: none;}
 	#glint-mobile-menu .submenu-header p{display: none;}
-	#glint-mobile-menu .submenu-header .mobile-mega-menu-item.with-icon.top-border h5{font-size: 1.25rem; color: #106959; text-transform: uppercase; font-weight: 700;}
+	#glint-mobile-menu .submenu-header .mobile-mega-menu-item.with-icon h5{font-size: 1.25rem; color: #106959; text-transform: uppercase; font-weight: 700;}
 
 	#glint-mobile-menu .mobile-mega-menu-item.without-icon{padding: 8px 0 12px 0; width: calc(100% - 20px); margin-left: 20px;}
 	#glint-mobile-menu .mobile-mega-menu-item.without-icon p{margin: -2px 0 0; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa;}
