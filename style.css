@@ -836,7 +836,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 	.glint-menu-panels{right: -50%;}
 	#glint-mobile-menu .glint-menu-panels{max-width: 400px;}
-	#glint-mobile-menu .menu-panel{padding: 20px 20% 20px 30px;}
+	#glint-mobile-menu .menu-panel{padding: 20px 20% 20px 25px;}
 	#glint-mobile-menu .glint-menu-panels .menu-items{margin: auto -5% auto 0;}
 	
 	#glint-mobile-menu .mobile-mega-menu-item{color: #006459; font-weight: 600; vertical-align: top;display: inline-block; width: 100%; border-bottom: 1px solid #eee; padding-bottom: 16px; margin-bottom: 5px;}
@@ -847,8 +847,8 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container{width: calc(100% - 55px); float: left;}
 	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container h5{text-transform: uppercase; color: #106959; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px;}
 	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container h5 a{text-transform: uppercase; color: #106959; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; font-family: "Sofia Sans", sans-serif; margin: 0 0 -3px;}
-	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container p{margin: -2px 0 0; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa;}
-	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container p a{margin: -2px 0 0; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa; line-height: 1.8;}
+	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container p{margin: 2px 0 0; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa; line-height: 1.25;}
+	#glint-mobile-menu .glint-menu-panels .menu-items .menu-detail-container p a{margin: 0; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2px; color: #aaa; line-height: 1.25;}
 	
 	#glint-mobile-menu .menu-back-button{text-align: center; display: inline-block; width: 100%; border: 1px solid #ccc; padding: 7px 5px 5px 0; margin-bottom: 40px;}
 	#glint-mobile-menu .submenu-header .mobile-mega-menu-item.with-icon.top-border{margin-top: 0; border-top-width: 0; padding-top: 0;}
