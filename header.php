@@ -299,7 +299,7 @@ $body_classes = implode( ' ', array_unique( array_filter( $body_classes ) ) );
 				<?php echo $submenu_page_content; ?> 
 				<div class="mega-menu-bottom-container">
 					<div class="flex_column av_two_fifth first flex_column_div mega-menu-contact">
-						<h3>GETTILESONLINE - Australia's Trusted Tile Place</h3>
+						<h3>Always New. Always Affordable. Always Online.</h3>
 						<p><b>Opens 6 days</b> Mon-Fri 8am-5pm / Sat 9am-3pm (02) 9707 3132</p>
 						<p><b>Showroom & Warehouse</b> 2 Stacey Street Bankstown, NSW 2200</p>
 					</div>
