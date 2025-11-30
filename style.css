@@ -982,7 +982,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#top #home-feature-container .flex_column.av_one_fourth{width: 46%; margin: auto 2%;}
 
 	/* promotion & temp */
-	.glint-notification-content p{font-size: 0.8rem; line-height: 1.2; margin-top: 2px; }
+	#top .glint-notification-content p{font-size: 0.8rem; line-height: 1.2; margin: 2px 5% 0; }
 }
 
 @media only screen and (max-width: 640px) 
