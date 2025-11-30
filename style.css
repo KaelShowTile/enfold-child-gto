@@ -735,7 +735,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 .slider-center-caption .slideshow_caption{text-align: center;}
 
-/* promotion */
+/* promotion & temp */
 #new-year-promotion-slider{margin-top: -30px;}
 #new-year-promotion-slider .caption_right .slideshow_caption{width: 52%; text-align: center;}
 #new-year-promotion-slider .caption_right h5{font-size: 12rem; line-height: 0.7; font-weight: 900; color: #ea4d6a; margin:40px auto 60px;}
@@ -749,6 +749,9 @@ textarea#sample-tile-names-string{pointer-events: none;}
 #sample-page-slider .slideshow_inner_caption{padding: 0;}
 #top #sample-page-slider .slideshow_inner_caption .avia-slideshow-button{border-color: #0d3934; color: #ffffff; background: #0d3934; margin-top: 0; padding: 14px 16px 13px; letter-spacing: 0.5px;}
 #top #sample-page-slider.mobile-only .slideshow_align_caption{text-align: center;}
+
+#top .glint-scrolling-notification{background: #f7849d;}
+#top .glint-scrolling-notification .glint-notification-content p{margin: 1px auto; color: #fff;}
 
 /* responsive */
 .mobile-only{display: none;}
