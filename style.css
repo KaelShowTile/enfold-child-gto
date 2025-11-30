@@ -983,6 +983,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 	/* promotion & temp */
 	#top .glint-notification-content p{font-size: 0.8rem; line-height: 1.2; margin: 2px 5% 0; }
+	#glint-menu-toggle{margin-top: 32px;} /* delete this if disable topbar */
 }
 
 @media only screen and (max-width: 640px) 
@@ -1126,6 +1127,8 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	.woocommerce-ajax-search-results .results-section{text-align: left;}
 	.responsive .woocommerce-ajax-search-results .results-section{margin-top: 20px;}
 	#glint-menu-toggle{margin-left: -10px;}
+
+	
 }
 
 @media screen and (min-width: 641px) {
