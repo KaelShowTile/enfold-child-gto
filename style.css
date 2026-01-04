@@ -752,6 +752,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 
 #top .glint-scrolling-notification{background: #f7849d;}
 #top .glint-scrolling-notification .glint-notification-content p{margin: 1px auto; color: #fff;}
+#top .glint-scrolling-notification .glint-notification-content b, #top .glint-scrolling-notification .glint-notification-content strong{font-size: 1em; line-height: 1;}
 .christmas-notice{margin-bottom: 20px; font-size: 1.25rem; font-weight: 300; line-height: 0.7;}
 .christmas-notice b{font-family: "Sofia Sans", sans-serif; font-size: 1.25rem; color: #ff0000;}
 
