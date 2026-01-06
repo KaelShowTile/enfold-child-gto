@@ -553,7 +553,7 @@ function custom_cart_info_in_header()
 }
 
 //set the default quantity to 1 for group product
-add_filter( 'woocommerce_quantity_input_args', 'set_default_quantity_to_one', 10, 2 );
+add_filter( 'woocommerce_quantity_input_args', 'set_default_quantity_to_one', 999, 2 );
 function set_default_quantity_to_one( $args, $product ) {
     // Only change the value if we are on a product page and not in the cart
     if ( ! is_cart() ) {
