@@ -552,6 +552,16 @@ function custom_cart_info_in_header()
     
 }
 
+//set the default quantity to 1 for group product
+add_filter( 'woocommerce_quantity_input_args', 'set_default_quantity_to_one', 10, 2 );
+function set_default_quantity_to_one( $args, $product ) {
+    // Only change the value if we are on a product page and not in the cart
+    if ( ! is_cart() ) {
+        $args['input_value'] = 1; 
+    }
+    return $args;
+}
+
 // Register cart fragment for AJAX updates
 add_filter('woocommerce_add_to_cart_fragments', 'custom_cart_header_fragment');
 function custom_cart_header_fragment($fragments) {

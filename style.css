@@ -407,6 +407,8 @@ a, .main_color a{color: #006459; font-weight: 600;}
 
 #top .woocommerce-tabs h2{font-size: 1.5rem; font-weight: 700; margin: 20px auto 15px;}
 
+#top form.cart.grouped_form .single_add_to_cart_button{background: #0d3934; color: #fff;}
+
 /* concept pages */
 .in-grid-container{padding-top: 20px;}
 #concept-page-header-container .avia_textblock{text-align: center;}
