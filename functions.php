@@ -210,7 +210,7 @@ function woocommerce_ajax_add_to_cart() {
     wp_die();
 }
 
-// Add AJAX endpoint for nonce refresh
+/* Add AJAX endpoint for nonce refresh
 add_action('wp_ajax_refresh_nonce', 'refresh_nonce_callback');
 add_action('wp_ajax_nopriv_refresh_nonce', 'refresh_nonce_callback');
 
@@ -241,8 +241,9 @@ function enqueue_nonce_refresh_script() {
         'nonce' => wp_create_nonce('refresh_nonce_action')
     ));
 }
+*/
 
-//add shipping logs
+/*add shipping logs
 add_action('woocommerce_cart_shipping_packages', 'log_shipping_debug_info', 1);
 function log_shipping_debug_info($packages) {
     $logger = wc_get_logger();
@@ -264,6 +265,7 @@ function log_shipping_debug_info($packages) {
     $logger->debug('--- Finish calculation ---', array('source' => 'shipping-debug'));
     return $new_packages;
 }
+*/
 
 //fliter main function
 function filter_products() {
