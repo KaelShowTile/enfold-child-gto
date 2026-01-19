@@ -757,7 +757,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 #top #sample-page-slider.mobile-only .slideshow_align_caption{text-align: center;}
 
 #top .glint-scrolling-notification{background: #f7849d;}
-#top .glint-scrolling-notification .glint-notification-content p{margin: 1px auto; color: #fff; transform: translateY(50%);}
+#top .glint-scrolling-notification .glint-notification-content p{margin: 1px auto; color: #fff;}
 #top .glint-scrolling-notification .glint-notification-content b, #top .glint-scrolling-notification .glint-notification-content strong{font-size: 1em; line-height: 1;}
 .christmas-notice{margin-bottom: 20px; font-size: 1.25rem; font-weight: 300; line-height: 0.7;}
 .christmas-notice b{font-family: "Sofia Sans", sans-serif; font-size: 1.25rem; color: #ff0000;}
@@ -989,7 +989,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 	#top #home-feature-container .flex_column.av_one_fourth{width: 46%; margin: auto 2%;}
 
 	/* promotion & temp */
-	#top .glint-notification-content p{font-size: 0.8rem; line-height: 1.2; margin: 2px 5% 0; }
+	#top .glint-notification-content p{font-size: 0.8rem; margin: 2px 5% 0; }
 	#glint-menu-toggle{margin-top: 32px;} /* delete this if disable topbar */
 }
 
