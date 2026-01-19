@@ -210,63 +210,6 @@ function woocommerce_ajax_add_to_cart() {
     wp_die();
 }
 
-/* Add AJAX endpoint for nonce refresh
-add_action('wp_ajax_refresh_nonce', 'refresh_nonce_callback');
-add_action('wp_ajax_nopriv_refresh_nonce', 'refresh_nonce_callback');
-
-function refresh_nonce_callback() {
-    // Verify the nonce sent from JavaScript
-    if (!wp_verify_nonce($_POST['nonce'], 'refresh_nonce_action')) {
-        wp_send_json_error('Invalid nonce');
-        return;
-    }
-
-    // You can specify the action for the nonce, or use a default
-    $action = isset($_POST['action_name']) ? sanitize_text_field($_POST['action_name']) : 'wp_rest';
-
-    // Send the new nonce in the data
-    wp_send_json_success(array(
-        'nonce' => wp_create_nonce($action)
-    ));
-}
-
-// Enqueue our refresh script
-add_action('wp_enqueue_scripts', 'enqueue_nonce_refresh_script');
-function enqueue_nonce_refresh_script() {
-    wp_enqueue_script('nonce-refresh', get_stylesheet_directory_uri() . '/js/nonce-refresh.js', array('jquery'), '1.0', true);
-    
-    // Pass AJAX URL to script
-    wp_localize_script('nonce-refresh', 'ajax_object', array(
-        'ajax_url' => admin_url('admin-ajax.php'),
-        'nonce' => wp_create_nonce('refresh_nonce_action')
-    ));
-}
-*/
-
-/*add shipping logs
-add_action('woocommerce_cart_shipping_packages', 'log_shipping_debug_info', 1);
-function log_shipping_debug_info($packages) {
-    $logger = wc_get_logger();
-    $logger->debug('--- start calculate shipping fee ---', array('source' => 'shipping-debug'));
-    
-    // Record orginal package
-    $logger->debug('orginal shipping package: ' . count($packages), array('source' => 'shipping-debug'));
-    foreach ($packages as $index => $package) {
-        $logger->debug("package {$index} includes: " . print_r($package['contents'], true), array('source' => 'shipping-debug'));
-    }
-    
-    // Record splited package
-    $new_packages = split_cart_by_shipping_class($packages); 
-    $logger->debug('splited package quantity: ' . count($new_packages), array('source' => 'shipping-debug'));
-    foreach ($new_packages as $index => $package) {
-        $logger->debug("splited package {$index} includes: " . print_r($package['contents'], true), array('source' => 'shipping-debug'));
-    }
-    
-    $logger->debug('--- Finish calculation ---', array('source' => 'shipping-debug'));
-    return $new_packages;
-}
-*/
-
 //fliter main function
 function filter_products() {
 
@@ -483,23 +426,6 @@ function woocommerce_product_gallery_setup()
 }
 
 add_action( 'after_setup_theme', 'woocommerce_product_gallery_setup' );
-
-
-/*put sales price in front of original price 
-add_filter('woocommerce_get_price_html', 'custom_price_display', 10, 2);
-
-function custom_price_display($price, $product) {
-    if ($product->is_on_sale()) 
-    {
-        $product_id = $product->get_id();
-        $regular_price = $product->get_regular_price();
-        $product_suffix = get_post_meta($product_id, '_advanced-qty-price-suffix', true);
-        $sale_price = $product->get_sale_price();
-        $price = '<span class="sale-price">' . wc_price($sale_price) . '' . $product_suffix . '</span> <del><span class="regular-price">' . wc_price($regular_price) . '</span></del>';
-    }
-    return $price;
-}
-*/
 
 //add ACF field "size_mm" on order email
 add_action('woocommerce_order_item_meta_end', 'add_custom_field_to_order_email', 10, 3);
