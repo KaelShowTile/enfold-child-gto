@@ -33,6 +33,9 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #fliter-loading-icon{ width: 100%; height: 100vh; position: fixed; background: rgba(255, 255, 255, 0.5); z-index: 9999999;}
 #fliter-loading-icon img{width: 40px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;}
 
+#top .av-siteloader{display: none;}
+.av-siteloader-cell img.av-preloading-logo{width: 200px;}
+
 /*remove zoom in function*/
 .woocommerce div.product div.images .woocommerce-product-gallery__image { pointer-events: none; }
 
@@ -579,6 +582,15 @@ td.actions .coupon{margin-top: 20px;}
 /* checkout */
 #order_review .shipping-class-option{display: none;}
 textarea#sample-tile-names-string{pointer-events: none;}
+#top #wrap_all .woocommerce-billing-fields .woocommerce-input-wrapper input{background: #dde5e4; font-size: 1rem; letter-spacing: 0.5px; padding: 10px 10px 8px;}
+#top .woocommerce-billing-fields .woocommerce-input-wrapper .selection .select2-selection{background: #dde5e4; border-width: 0; border-radius: 0; padding: 6px 0; height: 38px;}
+#top .woocommerce-billing-fields .woocommerce-input-wrapper .selection .select2-selection #select2-billing_state-container{font-size: 1rem; letter-spacing: 0.5px; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+#top .woocommerce-billing-fields .woocommerce-input-wrapper .selection .select2-selection .select2-selection__arrow{top: 6px; right: 6px;}
+#top.woocommerce-checkout .select2-dropdown.select2-dropdown--below{border: 0px; background: #dde5e4;}
+#top.woocommerce-checkout .select2-dropdown.select2-dropdown--below .select2-search{background: #dde5e4; border-top: 1px solid #e9f1f0; border-bottom-width: 0;}
+#top.woocommerce-checkout .select2-results__options{padding: 10px;}
+#top.woocommerce-checkout .select2-container--default .select2-results__option[aria-selected=true], #top.woocommerce-checkout .select2-container--default .select2-results__option[data-selected=true]{background-color: #0073aa; color: #fff;}
+#top.woocommerce-checkout .woocommerce-input-wrapper textarea{background: #dde5e4; font-size: 1rem; padding: 15px 20px;}
 
 /* footer */
 #footer-container a{color: #444;}
