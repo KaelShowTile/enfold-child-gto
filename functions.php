@@ -379,6 +379,42 @@ function display_shipping_classes_on_checkout() {
     }
 }
 
+//convert package size and weight before passing package details to shipping calculator 
+add_filter( 'woocommerce_cart_shipping_packages', 'convert_sqm_to_box_for_shipping', 9999, 1 );
+
+function convert_sqm_to_box_for_shipping( $packages ) {
+    //Loop the item in package(not items in checkout list)
+    foreach ( $packages as $package_key => $package ) {
+
+        foreach ( $package['contents'] as $item_key => $item ) {
+            $product = $item['data'];
+
+            $step_value = $product->get_meta( '_advanced-qty-step' );
+            //check if the product has a step value
+            if ( ! empty( $step_value ) && is_numeric( $step_value ) && $step_value > 0 ) {
+                //calculate box
+                $boxes_count = round( $item['quantity'] / $step_value );
+                
+                // Clone the item for shipping fee calculation only
+                $cloned_product = clone $product;
+                
+                // calculate total weight by the weight/m2
+                $weight_per_sqm = $cloned_product->get_weight();
+                if ( $weight_per_sqm ) {
+                    $weight_per_box = floatval( $weight_per_sqm ) * floatval( $step_value );
+                    $cloned_product->set_weight( $weight_per_box );
+                }
+
+                // replace the m2 product to box product in package 
+                $packages[ $package_key ]['contents'][ $item_key ]['quantity'] = $boxes_count;
+                $packages[ $package_key ]['contents'][ $item_key ]['data'] = $cloned_product;
+            }
+        }
+    }
+
+    return $packages;
+}
+
 
 // Setup the length of excerpt
 add_filter('avf_postgrid_excerpt_length','avia_change_postgrid_excerpt_length', 10, 1);
