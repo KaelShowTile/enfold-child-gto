@@ -176,6 +176,20 @@ if ( ! $short_description &&  ! $terms) {
 						echo '<p>' . esc_html( $get_grout_colour ) . '</p>';
 					echo'</li>';
 				}
+
+				$get_shipping_weight = $product->get_weight();
+				$get_step_value = get_post_meta($product->get_id(), '_advanced-qty-step', true); 
+				if($get_shipping_weight){
+					echo '<li>';
+						echo '<a class="parent-categories-item">Weight: </a>';
+							if($get_step_value && $get_step_value != 1){
+								$weight_per_box = round(($get_shipping_weight * $get_step_value), 2); 
+								echo '<p>' . esc_html( $get_shipping_weight) . ' kg/m2, ' . esc_html( $weight_per_box) . ' kg/box</p>';
+							}else{
+								echo '<p>' . esc_html( $get_shipping_weight) . ' kg</p>';
+							}	
+					echo'</li>';
+				}
 			?>
 
 		</div>
