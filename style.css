@@ -593,7 +593,7 @@ textarea#sample-tile-names-string{pointer-events: none;}
 #top.woocommerce-checkout .woocommerce-input-wrapper textarea{background: #dde5e4; font-size: 1rem; padding: 15px 20px;}
 
 table.shop_table.woocommerce-checkout-review-order-table{table-layout: fixed;}
-table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.7rem; font-weight: 500; letter-spacing: -0.2px;}
+table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem; font-weight: 500; letter-spacing: -0.2px; line-height: 1.25;}
 
 /* footer */
 #footer-container a{color: #444;}

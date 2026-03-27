@@ -94,6 +94,19 @@ $calculator_text          = '';
 			<?php woocommerce_shipping_calculator( $calculator_text ); ?>
 		<?php endif; ?>
 
-		<p>For “Australian wide delivery” option: delivery via Tailgate Truck + Pallet Jack – Required a flat and level concrete surface to unload onto. Every effort will be made to unload and place the pallets where the customer would ideally like them on site (i.e. into their garage.), however this is at the driver’s discretion taking into account safety and potential damage to property. If this cannot be done, delivery will be made at the kerbside.</p>
+		<?php $is_sample_shipping = true;
+
+        if ( ! empty( $available_methods ) ) {
+            foreach ( $available_methods as $method ) {
+                if (sanitize_title( $method->id ) != "sample_product_shipping" ) {
+                    $is_sample_shipping = false;
+                    break; 
+                }
+            }
+        }
+
+		if ( $is_sample_shipping == false ) : ?>
+			<p><small>For “Australian wide delivery” option: delivery via Tailgate Truck + Pallet Jack – Required a flat and level concrete surface to unload onto. Every effort will be made to unload and place the pallets where the customer would ideally like them on site (i.e. into their garage.), however this is at the driver’s discretion taking into account safety and potential damage to property. If this cannot be done, delivery will be made at the kerbside.</small></p>
+		<?php endif; ?>
 	</td>
 </tr>
