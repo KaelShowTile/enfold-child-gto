@@ -653,13 +653,20 @@ function sample_product_shipping_init() {
 
             public function calculate_shipping($package = []) {
                 $total_quantity = 0;
+                $cost = 0;
                 
                 foreach ($package['contents'] as $item) {
                     $total_quantity += $item['quantity'];
                 }
 
                 //shipping fee setting for sample product
-                $cost = 15 * ceil($total_quantity / 5);
+                if($total_quantity < 6){
+                    $cost = 15;
+                }elseif($total_quantity == 6){
+                    $cost = 20;
+                }else{
+                    $cost = 20 + 3 * ($total_quantity - 6);
+                }
 
                 $this->add_rate([
                     'id' => $this->id,
