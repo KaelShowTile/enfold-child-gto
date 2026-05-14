@@ -735,3 +735,23 @@ function change_attachment_image_attributes($attr, $attachment) {
     }
     return $attr;
 }
+
+
+//Add suffix on stock amount on single product page
+add_filter( 'woocommerce_get_availability', 'custom_override_get_availability', 1, 2);
+
+function custom_override_get_availability( $availability, $_product ) {
+    // check if stock management is turned on
+    if ( $_product->is_in_stock() && $_product->managing_stock() ) {
+        $stock_quantity = $_product->get_stock_quantity();
+        $product_id = $_product->get_id();
+        $product_suffix = get_post_meta($product_id, '_advanced-qty-price-suffix', true); 
+
+        if($product_suffix){
+            $availability['availability'] = $stock_quantity . " " . $product_suffix . " in stock.";
+        }else{
+            $availability['availability'] = $stock_quantity . " in stock.";
+        }
+    }
+    return $availability;
+}
