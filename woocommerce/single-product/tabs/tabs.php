@@ -163,7 +163,7 @@ if ( ! empty( $product_tabs ) ) : ?>
 
 					  <?php echo do_shortcode('[CP_CALCULATED_FIELDS id="6"]'); ?>
 
-					  <script src="/wp-content/themes/enfold-child/calculator-generator.js"></script>
+					  <script src="/wp-content/themes/enfold-child-gto/calculator-generator.js"></script>
 
 					</div>
 

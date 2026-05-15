@@ -240,7 +240,7 @@ if ( woocommerce_product_loop() ) {
 		        ajaxurl: "<?php echo admin_url('admin-ajax.php'); ?>"
 		    };
 		</script>
-		<script type="text/javascript" src="https://www.gettilesonline.com.au/wp-content/themes/enfold-child/js/ajax-filter.js" id="ajax-filter-js"></script>
+		<script type="text/javascript" src="https://www.gettilesonline.com.au/wp-content/themes/enfold-child-gto/js/ajax-filter.js" id="ajax-filter-js"></script>
 
 		<?php
 	}
