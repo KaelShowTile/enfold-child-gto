@@ -746,6 +746,7 @@ function custom_override_get_availability( $availability, $_product ) {
         $stock_quantity = $_product->get_stock_quantity();
         $product_id = $_product->get_id();
         $product_suffix = get_post_meta($product_id, '_advanced-qty-price-suffix', true); 
+        $result = str_replace("/", "", $product_suffix);
 
         if($product_suffix){
             $availability['availability'] = $stock_quantity . " " . $product_suffix . " in stock.";
