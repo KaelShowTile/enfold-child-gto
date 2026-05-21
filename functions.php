@@ -463,22 +463,6 @@ function woocommerce_product_gallery_setup()
 
 add_action( 'after_setup_theme', 'woocommerce_product_gallery_setup' );
 
-//add ACF field "size_mm" on order email
-add_action('woocommerce_order_item_meta_end', 'add_custom_field_to_order_email', 10, 3);
-
-function add_custom_field_to_order_email($item_id, $item, $order) {
-    // Get the product ID from the order item
-    $product_id = $item->get_product_id();
-
-    // Get the ACF custom field value
-    $size_mm = get_field('size_mm', $product_id);
-
-    // Check if the field has a value
-    if ($size_mm) {
-        echo '<p><strong>Size:</strong> ' . esc_html($size_mm) . '</p>';
-    }
-}
-
 
 //Put Recipients into BCC list for new order email   
 add_filter('woocommerce_email_headers', 'add_bcc_to_new_order_email', 10, 3);
@@ -735,7 +719,6 @@ function change_attachment_image_attributes($attr, $attachment) {
     }
     return $attr;
 }
-
 
 //Add suffix on stock amount on single product page
 add_filter( 'woocommerce_get_availability', 'custom_override_get_availability', 1, 2);
