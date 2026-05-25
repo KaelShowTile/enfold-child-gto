@@ -373,9 +373,11 @@ a, .main_color a{color: #006459; font-weight: 600;}
 .gto-product-warpper{display: flex; overflow: hidden;}
 .gto-product-gallery-container{width: 52%; margin-right: 3%; position: relative;}
 .gto-gallery-wishlist-container .yith-wcwl-add-to-wishlist{position: absolute; z-index: 1; right: 10px; top: 20px;}
-.gto-gallery-wishlist-container span{display: none;}
 .single.single-product .gto-gallery-wishlist-container{z-index: 3; position: relative;}
 .gto-product-gallery-container .yith-wcwl-wishlistaddedbrowse{background: rgba(255, 255, 255, 0.5); padding: 1px 10px 0;}
+.gto-product-gallery-container .gto-gallery-wishlist-container{display: inline-block; position: absolute !important; top: 5px; right: 12px;}
+.gto-product-gallery-container .gto-gallery-wishlist-container .text{display: none;}
+.gto-product-gallery-container .gto-gallery-wishlist-container .icon{font-size: 24px;}
 .gto-product-gallery-container .avia-slideshow{margin-top: 0;}
 .gto-product-gallery-container .avia-slideshow-inner{height: calc(100vh - 250px) !important;}
 .gto-product-gallery-container .avia-slideshow-inner .avia-slide-wrap{overflow: hidden; padding-top: 100%; width: 100%; position: relative; display: block;}
@@ -658,15 +660,10 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 .main_color table.wishlist_table tbody tr{background: #fff;}
 .main_color .wishlist_table tbody tr td{border-left-width: 0; border-right-width: 0;}
 .main_color .wishlist_table tbody tr .product-thumbnail a{max-width: 32px; max-height: 32px;}
-.add-to-wishlist-before_image .yith-wcwl-add-to-wishlist{left: auto; right: 10px;}
-.products .add-to-wishlist-before_image .yith-wcwl-add-button span{display: none;}
-.add-to-wishlist-before_image .yith-wcwl-add-to-wishlist i{font-size: 1.2rem; padding: 6px 5px 4px;}
-.products .add-to-wishlist-before_image .yith-wcwl-add-button .yith-wcwl-icon{font-size: 1.2rem; padding: 6px 5px 4px; border-radius: 50px; font-weight: 900;}
-.add-to-wishlist-before_image .yith-wcwl-add-button .yith-wcwl-icon{ color: #f7849d;}
-.add-to-wishlist-before_image .yith-wcwl-add-to-wishlist i{color: #f7849d;}
-.yith-wcwl-icon.fa.fa-heart-o::before{color: #f7849d;}
-.yith-wcwl-add-to-wishlist .feedback .yith-wcwl-icon::before{color: #f7849d;}
-.single-product-summary .yith-wcwl-add-to-wishlist{display: none;}
+.glint-wishlist-product .remove-from-wishlist{background: #f7849d;}
+.gto-archive-wishlist-container{position: absolute; z-index: 999; right: 15px; top: 7px;}
+.gto-archive-wishlist-container .text{display: none;}
+.gto-archive-wishlist-container .icon{font-size: 24px;}
 
 #top .gto-product-review-item{padding: 25px 30px 10px; margin-left: 0;}
 

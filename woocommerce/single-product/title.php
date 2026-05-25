@@ -59,6 +59,6 @@ if($delimiter !== null)
 
 </div>
 
-<div class="hide-this-area"><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></div>
+<div class="hide-this-area"><?php echo do_shortcode('[gto_wishlist_button]'); ?></div>
 
 <?php

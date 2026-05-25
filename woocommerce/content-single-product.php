@@ -91,7 +91,7 @@ if ( post_password_required() ) {
 
 		<div class="gto-product-gallery-container">
 
-			<div class="gto-gallery-wishlist-container"><?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?></div>
+			<div class="gto-gallery-wishlist-container"><?php echo do_shortcode('[gto_wishlist_button]'); ?></div>
 
 			<div class="gto-product-gallery-container-inner  desktop-only">
 

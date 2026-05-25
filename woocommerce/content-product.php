@@ -41,6 +41,8 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	    echo '<span class="product-discount-rate"> '. $percentage .'% OFF</span>'; 
 	}
 
+	echo '<div class="gto-archive-wishlist-container">' . do_shortcode('[gto_wishlist_button]') . '</div>';
+
 	/**
 	 * Hook: woocommerce_before_shop_loop_item_title.
 	 *
