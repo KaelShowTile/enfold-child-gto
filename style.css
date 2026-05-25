@@ -659,7 +659,7 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 .main_color table.wishlist_table tbody tr{background: #fff;}
 .main_color .wishlist_table tbody tr td{border-left-width: 0; border-right-width: 0;}
 .main_color .wishlist_table tbody tr .product-thumbnail a{max-width: 32px; max-height: 32px;}
-.glint-wishlist-button .wishlist-toggle .icon{color: #fff; background: #f7849d; border-radius: 50%; width: 30px; height: 30px; display: inline-block; text-align: center; margin: 0;}
+.glint-wishlist-button .wishlist-toggle .icon{color: #fff; background: #f7849d; border-radius: 50%; width: 30px; height: 30px; display: inline-block; text-align: center; margin: 0; line-height: 32px;}
 .glint-wishlist-product .remove-from-wishlist{background: #f7849d;}
 .gto-archive-wishlist-container{position: absolute; z-index: 999; right: 15px; top: 7px;}
 .gto-archive-wishlist-container .text{display: none;}
@@ -1148,7 +1148,8 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 	#glint-menu-toggle{margin-left: -10px;}
 
 	.glint-stock-notice{color: #ff0000;}
-	
+
+	.gto-archive-wishlist-container{right: 8px; top: 12px;}
 }
 
 @media screen and (min-width: 641px) {
