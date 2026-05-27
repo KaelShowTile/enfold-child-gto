@@ -753,6 +753,6 @@ function enable_backorder_message_to_out_of_stock_product() {
 
     $enable_backorder = intval( $product->get_meta( 'glint_backorder' ) );
     if ( $enable_backorder === 1 ) {
-        echo '<div class="glint-stock-notice" style="margin-top: 15px; font-weight: 500;">Please contact us for backorder</div>';
+        echo '<div class="glint-backorder-notice" style="margin-top: 15px; font-weight: 500;">Please contact us for backorder</div>';
     }
 }

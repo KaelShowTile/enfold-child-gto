@@ -751,18 +751,6 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 
 .slider-center-caption .slideshow_caption{text-align: center;}
 
-/* promotion & temp */
-/*
-#new-year-promotion-slider{margin-top: -30px;}
-#new-year-promotion-slider .caption_right .slideshow_caption{width: 52%; text-align: center;}
-#new-year-promotion-slider .caption_right h5{font-size: 12rem; line-height: 0.7; font-weight: 900; color: #ea4d6a; margin:40px auto 60px;}
-#new-year-promotion-slider .caption_right h5 span{font-size: 0.75em; line-height: 0; color: #fff;}
-#new-year-promotion-slider .caption_right .av-countdown-timer-inner{width: 50%; margin: auto;}
-#new-year-promotion-slider .caption_right .av-countdown-cell-inner{background: transparent; border-width: 0 !important;}
-#new-year-promotion-slider .caption_right .av-countdown-cell-inner .av-countdown-time{color: #fff; font-weight: 700; font-size: 4rem;}
-#new-year-promotion-slider .caption_right .av-countdown-cell-inner .av-countdown-time-label{color: #ea4d6a; font-weight: 600; font-size: 0.8rem;}
-*/
-
 #sample-page-slider.desktop-only .slideshow_caption{bottom: 15%;}
 #sample-page-slider .slideshow_inner_caption{padding: 0;}
 #top #sample-page-slider .slideshow_inner_caption .avia-slideshow-button{border-color: #0d3934; color: #ffffff; background: #0d3934; margin-top: 0; padding: 14px 16px 13px; letter-spacing: 0.5px;}
@@ -773,6 +761,9 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 #top .glint-scrolling-notification .glint-notification-content b, #top .glint-scrolling-notification .glint-notification-content strong{font-size: 1em; line-height: 1;}
 .christmas-notice{margin-bottom: 20px; font-size: 1.25rem; font-weight: 300; line-height: 0.7;}
 .christmas-notice b{font-family: "Sofia Sans", sans-serif; font-size: 1.25rem; color: #ff0000;}
+
+.gto-product-des-inner .stock.out-of-stock{display: none;}
+.glint-backorder-notice{position: relative; color: #ff0000; margin: -60px 0 20px 40px !important;}
 
 /* responsive */
 .mobile-only{display: none;}
