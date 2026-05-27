@@ -739,3 +739,20 @@ function custom_override_get_availability( $availability, $_product ) {
     }
     return $availability;
 }
+
+
+//showing backorder message for out of stock product
+
+add_action('woocommerce_single_product_summary', 'enable_backorder_message_to_out_of_stock_product', 31);
+function enable_backorder_message_to_out_of_stock_product() {
+    global $product;
+
+    if ( ! is_a( $product, 'WC_Product' ) || $product->is_in_stock() ) {
+        return;
+    }
+
+    $enable_backorder = intval( $product->get_meta( 'glint_backorder' ) );
+    if ( $enable_backorder === 1 ) {
+        echo '<div class="glint-stock-notice" style="margin-top: 15px; font-weight: 500;">Please contact us for backorder</div>';
+    }
+}
