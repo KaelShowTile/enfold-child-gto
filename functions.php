@@ -743,7 +743,7 @@ function custom_override_get_availability( $availability, $_product ) {
 
 //showing backorder message for out of stock product
 
-add_action('woocommerce_single_product_summary', 'enable_backorder_message_to_out_of_stock_product', 31);
+add_action('woocommerce_simple_add_to_cart', 'enable_backorder_message_to_out_of_stock_product', 31);
 function enable_backorder_message_to_out_of_stock_product() {
     global $product;
 
