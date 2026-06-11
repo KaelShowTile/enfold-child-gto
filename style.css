@@ -121,7 +121,6 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #top #header.av_minimal_header .menu-item-mega-parent .sub-menu .sub-menu .menu-item:hover span{color: #f7849d;}
 #top #header.av_minimal_header .menu-item-mega-parent .sub-menu .sub-menu .menu-item:hover .avia-bullet{display: block; border-color: #f7849d;}
 
-
 .av-burger-overlay-inner, .av-burger-overlay-bg{background: rgba(255, 255, 255, 0.85);}
 #top #wrap_all #header #av-burger-menu-ul li{padding: 0;}
 .html_av-overlay-full #top #wrap_all #av-burger-menu-ul li a{background: #f2f2f2; opacity: 1; height: 68px;}
@@ -168,8 +167,8 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #top .av-cart-counter.av-active-counter{display: none;}
 
 .gto-custom-product-filter{margin: 60px 0 40px;}
-.archive-fliter-dropdown { position: relative; display: inline-block; margin: 0 15px 10px 0;}
-.archive-fliter-dropdown-btn { background-color: #fff; color: #666; padding: 12px 20px 10px 20px; font-size: 1rem; border: 1px solid #ccc; border-radius: 25px; cursor: pointer;}
+.archive-fliter-dropdown{position: relative; display: inline-block; margin: 0 15px 10px 0;}
+.archive-fliter-dropdown-btn{background-color: #fff; color: #666; padding: 12px 20px 10px 20px; font-size: 1rem; border: 1px solid #ccc; border-radius: 25px; cursor: pointer;}
 .archive-fliter-dropdown-btn:after{content: ""; font-family: 'entypo-fontello'; padding: 3px 0 0 12px;}
 .archive-fliter-dropdown-content{display: none;  position: absolute; padding: 20px 15px; background-color: #f9f9f9; min-width: 250px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); z-index: 11;}
 .archive-fliter-dropdown-content label { display: block; width:100% ;padding: 8px 12px; font-weight: 400 !important; font-size: 1rem !important; line-height: 1; color: #333;}
@@ -763,7 +762,7 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 .christmas-notice b{font-family: "Sofia Sans", sans-serif; font-size: 1.25rem; color: #ff0000;}
 
 .gto-product-des-inner .stock.out-of-stock{display: none;}
-.glint-backorder-notice{position: relative; color: #ff0000; margin: -60px 0 20px 40px !important;}
+.glint-backorder-notice{position: relative; color: #ff0000; margin: -35px 0 20px 45px !important;}
 .avia-content-slider-inner .glint-wishlist-button{display: none;}
 
 /* responsive */
