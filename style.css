@@ -763,6 +763,7 @@ table.shop_table.woocommerce-checkout-review-order-table td p{font-size: 0.85rem
 
 .gto-product-des-inner .stock.out-of-stock{display: none;}
 .glint-backorder-notice{position: relative; color: #ff0000; margin: -35px 0 20px 45px !important;}
+.product.outofstock .glint-backorder-notice{margin: -35px 0 20px 46px !important; font-size: 0.85rem; letter-spacing: 0.3px;}
 .avia-content-slider-inner .glint-wishlist-button{display: none;}
 
 /* responsive */
