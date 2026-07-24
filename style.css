@@ -456,7 +456,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #blog-container .read-more-link{margin-top: 20px;}
 
 #top .fullsize .template-blog .post .entry-content-wrapper{max-width: 1200px;}
-#top .fullsize .template-blog .post .entry-content-wrapper > *{max-width: 1200px;}
+#top #wrap_all .fullsize .template-blog .post .entry-content-wrapper{max-width: 1200px;}
 
 #top.single.single-post .title_container .container{max-width: 1440px;}
 .container.template-blog.template-single-blog{max-width: 1440px;}
