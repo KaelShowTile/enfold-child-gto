@@ -455,7 +455,7 @@ a, .main_color a{color: #006459; font-weight: 600;}
 #blog-container .slide-entry-excerpt.entry-content{font-size: 1rem; letter-spacing: 0.5px;}
 #blog-container .read-more-link{margin-top: 20px;}
 
-#top #wrap_all .fullsize .template-blog .post .entry-content-wrapper{max-width: 1200px;}
+#top #wrap_all #gto-blog-content-container .entry-content-wrapper, #top #wrap_all #gto-blog-content-container .entry-content-wrapper > *{max-width: 100%;}
 
 #top.single.single-post .title_container .container{max-width: 1440px;}
 .container.template-blog.template-single-blog{max-width: 1440px;}
