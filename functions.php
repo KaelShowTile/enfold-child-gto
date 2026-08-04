@@ -60,6 +60,19 @@ function add_noindex_for_filtered_pages()
     }
 }
 
+//redirect 404 link caused by spam & paramaters
+add_action( 'template_redirect', 'wc_redirect_404_with_params' );
+function wc_redirect_404_with_params() {
+    if ( is_404() && ! empty( $_SERVER['QUERY_STRING'] ) ) {
+        $shop_url = wc_get_page_permalink( 'shop' );
+        
+        if ( ! $shop_url ) {
+            $shop_url = home_url();
+        }
+        wp_safe_redirect( $shop_url, 301 );
+        exit;
+    }
+}
 
 //change robots meta to noindex nofollow if the url has a woocommerce parametere 
 add_filter( 'wp_robots', 'noindex_wc_product_pages_with_params', 20 );
