@@ -19,6 +19,9 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
+$product_id = $product->get_id();
+$product_url = get_permalink($product->get_id());
+
 // Check if the product is a valid WooCommerce product and ensure its visibility before proceeding.
 if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	return;
@@ -49,7 +52,9 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	 * @hooked woocommerce_show_product_loop_sale_flash - 10
 	 * @hooked woocommerce_template_loop_product_thumbnail - 10
 	 */
+	echo '<a href="' . $product_url . '">';
 	do_action( 'woocommerce_before_shop_loop_item_title' );
+	echo '</a>';
 
 	/**
 	 * Hook: woocommerce_shop_loop_item_title.
@@ -64,7 +69,6 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 	$firstPart = $full_title;
 	$delimiter;
 	$product_code = " ";
-	$product_id = $product->get_id();
 	$step_value = get_post_meta($product_id, '_advanced-qty-step', true); 
 
 	if (strpos($full_title, "(Code:") !== false)
@@ -93,8 +97,6 @@ if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
 		$product_code = str_replace(")", "", $product_code);
 	}
 	
-	$product_url = get_permalink($product->get_id());
-
 	//get ranking
 	$rating_score = get_field('tile_rate');
 	if( !$rating_score ) 
