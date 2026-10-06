@@ -724,6 +724,7 @@ function contact_us_shipping_init() {
 add_filter('woocommerce_shipping_methods', 'add_sample_product_shipping_method');
 function add_sample_product_shipping_method($methods) {
     $methods['sample_product_shipping'] = 'WC_Shipping_Sample_Product';
+    $methods['contact_us_shipping'] = 'WC_Shipping_Contact_Us';
     return $methods;
 }
 
