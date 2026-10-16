@@ -653,7 +653,29 @@ function sample_product_shipping_init() {
                 $cost = 0;
                 
                 foreach ($package['contents'] as $item) {
-                    $total_quantity += $item['quantity'];
+                    $sample = $item['data'];
+                    $sample_id = $sample->get_id();
+                    
+                    //get the orginal product id
+                    global $wpdb;
+                    $table = $wpdb->prefix . 'glint_sample_product';
+
+                    $product_id = $wpdb->get_var($wpdb->prepare(
+                        "SELECT original_product_id FROM $table WHERE sample_product_id = %d", 
+                        $sample_id
+                    )); 
+
+                    //check the value of thickness
+                    if($product_id){
+                        $product =wc_get_product( $product_id );
+                        $thickness = $product->get_attribute( 'pa_thickness' );
+                        if($thickness == '18mm' || $thickness == '20mm' || $thickness == '23mm' || $thickness == '30mm'){
+                            //for thicker tile, count as 2 
+                            $total_quantity += $item['quantity'] * 2;
+                        }else{
+                            $total_quantity += $item['quantity'];
+                        }
+                    }
                 }
 
                 //shipping fee setting for sample product
